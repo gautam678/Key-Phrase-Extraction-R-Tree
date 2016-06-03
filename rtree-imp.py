@@ -25,7 +25,7 @@ def indexWordOccurence():
     keyMap = {}
     for keyIndex, keyPoints in enumerate(dataDict.items()):
         key,points = keyPoints
-        
+
         keyMap[key] = keyIndex+1
         for point in points:
             data.append((keyIndex+1,point))
@@ -43,7 +43,7 @@ def query_for_nearest_terms(idx,keyMap,queryKey,numOfNearest = 5, notincludeQuer
     x = keyMap[queryKey]
     Y = dataDict[queryKey]
     histogram = {}
-    for y in Y:        
+    for y in Y:
         for i in idx.nearest((x,y,x,y),numOfNearest):
             try:
                 #print i,
@@ -62,7 +62,7 @@ def query_for_nearest_terms(idx,keyMap,queryKey,numOfNearest = 5, notincludeQuer
                 continue
     return sorted(histogram.iteritems(), key=lambda x:x[::-1], reverse=True)
 
-def main():       
+def main():
     data,keyMap = indexWordOccurence()
     idx = createRTree(data)
 
