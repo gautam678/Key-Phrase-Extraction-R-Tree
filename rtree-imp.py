@@ -40,7 +40,9 @@ def createRTree(data):
 
 def query_for_nearest_terms(idx,keyMap,queryKey,numOfNearest = 5, notincludeQuery = True):
     x = keyMap[queryKey]
+    print x
     Y = dataDict[queryKey]
+    print Y
     histogram = {}
     for y in Y:
         for i in idx.nearest((x,y,x,y),numOfNearest):
@@ -72,6 +74,7 @@ def main():
         print keyMap
         print nearestTermsHistogram
         print "="*27
+        break
 
 main()
 #print dataDict.keys()
