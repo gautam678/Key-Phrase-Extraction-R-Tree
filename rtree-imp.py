@@ -1,6 +1,9 @@
 from rtree import index
 ##from data import Yahoo as dataDict
 idx=index.Index()
+import numpy as np
+import matplotlib.pyplot as plt
+
 #'''
 dataDict = {'website': [384, 568, 646, 1209, 15849, 15937, 16293, 16502, 18826, 22352, 22567]
 ,'google': [1024, 2961, 3093, 5067, 6009, 6083, 6375, 14246, 22940]
@@ -67,11 +70,25 @@ def query_for_nearest_terms(idx,keyMap,queryKey,numOfNearest = 5, notincludeQuer
 def main():
     data,keyMap = indexWordOccurence()
     idx = createRTree(data)
-
     for keys in dataDict:
         print keys
+        X=[]
+        Y=[]
+        ann=[]
         nearestTermsHistogram = query_for_nearest_terms(idx,keyMap,keys,numOfNearest=10)
+        for x,y in nearestTermsHistogram:
+            X.append(x)
+            ann.append(keyMap.keys()[x-1])
+            Y.append(y)
+        print X
+        print Y
+        print ann
+        fig, ax = plt.subplots()
+        ax.scatter(X, Y)
+        for i, txt in enumerate(ann):
+            ax.annotate(txt, (X[i],Y[i]))
         print keyMap
+        plt.show()
         print nearestTermsHistogram
         print "="*27
         break
