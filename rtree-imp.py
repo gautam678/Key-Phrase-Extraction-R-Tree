@@ -1,11 +1,11 @@
 from rtree import index
-from data import Yahoo as dataDict
+from data import Google as dataDict
 idx=index.Index()
 import matplotlib
 matplotlib.use("Agg")
 import numpy as np
 import matplotlib.pyplot as plt
-
+'''
 dataDict = {'website': [384, 568, 646, 1209, 15849, 15937, 16293, 16502, 18826, 22352, 22567]
 ,'google': [1024, 2961, 3093, 5067, 6009, 6083, 6375, 14246, 22940]
 ,'providers': [493, 8844, 9370]
@@ -23,7 +23,7 @@ dataDict = {'website': [384, 568, 646, 1209, 15849, 15937, 16293, 16502, 18826, 
 ,'phone': [6190, 9758, 15420, 17193]
 ,'search': [159, 179, 2517, 2972, 3027, 6323, 7258, 9831, 10308, 10344, 11277, 11330, 11845, 11882, 12048, 12659, 13011, 13068, 14377, 14490, 14698, 16129, 18076, 20551, 20780, 20848, 21857]
 ,'mobile': [9606, 9663, 9868, 10452, 10570, 14051]}
-
+'''
 def indexWordOccurence():
     data=[]
     keyMap = {}
