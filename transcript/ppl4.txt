@@ -1,0 +1,359 @@
+TRANSCRIPTOR: V.Srinivasa Rajkumar
+
+Educational Technology I.I.T. Delhi 
+presents
+
+A Video Course on Programming Languages
+by
+Dr.S.Arun Kumar 
+Deptt. of Comp.Sc. & Engg.
+I.I.T. Delhi 
+
+Lecture 4
+Ambiguity
+
+today we will talk about ambiguity but before that we will go through some simple definition of a simple programming language then look at how ambiguity comes about naturally and let us see
+so let us get back to our favorite grammar our favorite context free grammar which you have seen several times [00:55] is this and let us look at let us look at the sentence that we generated using this grammar 
+
+
+
+so now [noise] [01:15] if you take a look at this let us take a look at this sentence generation carefully 
+if your ultimate aim is to generate this sentence of this grammar then let us look at how we have um applied the productions or fired the productions 
+
+
+
+so initially there was no alternatives we took we chose one out of three possibilities right
+
+there were [01:45] three possibilities for us 
+
+
+
+S goes S replaces replaced by A 
+S replaced by V 
+S replaced by C
+S replaced by an identifier so there are four possibilities of which we chose one 
+
+in fact [02:00] if you have to if you have to generate this sentence then there is really no other possibility you should take 
+
+
+
+any other possibility will not give you this sentence ok 
+so out of the four possible choices we have to choose this um then there was only one possibility for C and we have chosen that 
+the [noise] here again unless you chose the possibility A this possibility A you cannot generate this ultimate sentence ok and for A there is only one possibility namely this is this 
+now you actually have two possibilities ok
+we have chosen to fire this with S goes to b one ok which is essentially i mean which is essential in the sense if you had to some produce the b one in the end you would have been forced to apply this S goes to b one ok 
+however there was another possibility that is that we could instead we could have ignored this and instead fired this ok
+so if we had chosen this S then what would have happened is we would have chosen we could have got this this step V first 
+so these two steps would have been computed ok so what we would have got is that if we would have chosen this um chosen to apply a production on this S 
+always keeping in mind that this is the ultimate sentence that we have to generate what we would have got is not open bracket 
+open bracket V and S and then again we have the possibility of either firing this V or this S ok and we could have chosen any one 
+you could either replace this S by this b one here or we could have gone ahead with this V and replaced it with S or S ok 
+and then here again now you would have um supposing you had chosen this V  you would have S or S and you would this S would be there when you have three possibilities of replacement and you could choose any of them ok 
+so what i am what i am  so if you look at the derivation of a sentence this particular order is not sachrosite  
+out of the various non terminals in the intermediate sentence generation you could have  and applied a appropriate ok 
+so there would be many such derivations after same sentence ok depending upon the order in which you chose to apply productions in a sentence 
+in other words what they are saying is whether you choose this or this it really does not matter 
+so the so the various derivations that you have um just give you various orders either you for example here we have not chosen any particular order 
+we could have chosen for example um to always fire a production of the leftmost non terminal symbol in a in a intermediate string 
+so here for example we have violated that we have not chosen the left most ok so here you might consider this derivation as one of um several possible derivations of this sentence ok
+so since we are talking about a context free grammar and the replacement of  non terminals by their right hand sides in the production rule 
+the we were talking of something that is independent of context so if there are several non terminals it really does not matter which non terminal is chosen first for replacement provided you 
+you can so provided you choose the right one which will ultimately give you this sentence 
+so if you were to justify each of these steps in this derivation by by which production you have applied ok
+
+so you [06:48] could number these productions as one two three four five six seven 
+
+
+
+and you [06:56] could write a justification which just tells you which production number you applied then even though um then what you could do is essentially you could 
+
+
+
+permute the order of the productions of these applications 
+so so for example in here you don’t have much choice but here as i said you have two possible choices either an application of production four which is this or an application of production two which is this right 
+so you could have just permuted the order in which you apply these productions but your intermediate sentences your intermediate sentences will not be the same ok 
+but you could have permuted the order of application of these productions and you could have derived the same sentence 
+so what it means is that the application of productions for the derivation of sentences in a context free grammar can often be need not be totally ordered 
+so there could because of the context freeness of the grammar there is an independence at a intermediate stage between the various non terminals that you can choose to replace right 
+so what it means is that there is nothing sacrocite[08:32] about this derivation we could have got another derivation by just applying the same productions in a different order 
+so so what it means is that these productions because of their independence what we can however there is a certain amount of order 
+for example you could never have applied any of these productions let us say before applying this production ok 
+you would never have any of these possibilities before applying this production C goes to not S if you are interested in generating this sentence 
+so given this sentence you would have to apply this before any of the others but here you have a choice whether you want to replace this S or this S 
+but the actual production that you have to apply is still place specific if you have to generate this b two or b one 
+you have no alternative but to replace this S eventually but whether you replace this S before you replace this S or after it does not matter ok 
+so the in any derivation this independence between the two or several other possible replacements that might be there gives you a partial ordering on the application of the productions ok [noise]
+so this partial ordering is really what is sacrocite so what does this partial ordering specify 
+this partial ordering specifies that if there are certain productions which have to be applied in a certain order but other productions need not be applied in the same order they could be applied independent of each other 
+so if you were to look at the various derivations possible for this sentence we could take all those derivations and collapse them to give us the partial order colas them to actually see independence look for independence and dependence 
+in fact what we can do is we can draw draw a tree of exact dependences ok so that tree is what is know as parse tree yeah 
+so if you were to take this 
+
+this is [11:20] the same um same sentence that we have generated ok 
+and what this tree tells us is 
+
+
+
+what are the dependencies in the applications of various productions so the root of the parse tree is always the start symbol ok
+now in the generation of this sentence 
+the first  production  that was applied was S goes to C which i have not written here but you could you could for example write S goes to C as um yeah 
+then the next production was C goes to not S ok
+so that C goes to not S is what is written so the various terminal symbols i mean i am looking upon the whole of not as a single symbol ok
+open parenthesis as a single symbol um remember our convention that black denotes terminal symbols 
+the eventual strings that you generate will all be strings in black strings of the language the colors denote um denote certain abstractions yeah right
+so the first production was S goes to C 
+C goes to not open parenthesis S close parenthesis then then there was a production then there was a application of S which yielded A and that is this 
+this is an application of the production S yields A and then you have this A yields open parenthesis S and S close parenthesis and now we are here at this point we are at the same position that we are here in the original sentence ok
+and now the fact that you can choose this as first or this as does not really matter eventually in what ever order you apply the productions for them 
+if you are interested in generating the sentence that you have generated then the right hand S should go to a b one and the left hand S be expanded into a V
+this V should be expanded into open parenthesis S or S close parenthesis and it does not matter in which order you perform these two productions 
+the first one if you are interested in generating this sentence the first S should produce a b two and the second S should produce a b one yeah
+so that is also the reason why i have used a brown color for the productions ok so we obtain a tree which we can call the parse tree and the branches of so 
+the leaves of the of this tree are all terminal symbols notice that all the leaves of this tree are all black 
+so if you read if you read the tree if you read the leaves from left to right you get the sentence that you generated 
+so you have not open parenthesis open parenthesis open parenthesis b two or b one close parenthesis and b one close parenthesis close parenthesis which is what this sentence is right so 
+so what we are most interested in is in a is in the parse tree rather than in the actual derivation ok
+so for any sentence we have a corresponding parse tree for generating any sentence we do not necessarily have a unique derivation ok
+so in this grammar that we have defined for every sentence is actually a unique parsed yeah so let us let us 
+and parse trees are very important from the point of view of compiling language implementation from the point of view of specifying semantics um 
+it is the only thing that is really sacrocite and the fact that there are many orders of derivation for the i mean there are many ways of traversing this parse parse tree gives you several possible derivations yeah so [noise] 
+so let us just summarize that briefly 
+
+so we [16:41] can look upon a parse tree as presenting the partial order in the firing of productions yeah and we can look upon a derivation of a sentence as just one of many possible traversals of the parse tree of the sentence 
+so for each sentence what we would like to have is a unique parse tree not necessarily a unique derivation 
+what we want is a unique parse tree ok so the traversal of the tree um depending upon which 
+how how you decide to traverse the tree you have various possible derivations so you can look upon a derivation as just a linearization of a partial order yeah
+i think most of you are familiar topological sorting right so for example a topological sort just takes a partial order and linearizes it you sort it so that you you 
+you provide a linear order a total order of all the elements such that the dependency specified by the partial order are maintained but their dependencies do not exists you might place them in any order you like ok
+so a linearization of a tree always gives you a total order ok and you can have and in fact for partial orders it is also true that a partial order is completely defined by the set of all possible linearization’s of the partial 
+so essentially a parsed tree is also completely specified since it is a partial order by the set of all possible derivations or traverses you can make of the past yeah
+so this is a fundamental property in the theory of partial orders which is that you can look upon every partial order as actually a set consisting of all total orders of that set yeah
+so as being completely defined by the set of all total orders ok
+so now what actually the parse tree that we have presented is a is somewhat syntactical yeah so it is syntactical in the sense that um from the point of view of compiling or language def um or language implementation it is all fine 
+in the sense that well from the point of view of of a language implementation it doesn’t really matter what what is the nature of each of these terminal symbols 
+as far as it is concerned it is some stream of symbols that are coming and just looks upon them as a stream of symbols 
+but any kind of language also has a implicit um type of terminal symbols which is clearly distinguished for example we make 
+we make a clear distinction always between a identifier and a operator yeah so for example 
+so um so this we might call a concrete parse tree where we make no distinction at all between identifiers and operators 
+if they are terminal symbols they are leaves of the parse tree that is it ok
+so what we are more often interested in is what might be called a abstract parse tree where the same sentence you actually make a distinction between what are the operators and operands 
+so if you look at the sentence that we have previously generated you look at the sentence it is clear that our intention was to define a language of Boolean expressions where the operations are not and and or and the operands are these Boolean variables like b one  b two and so on right 
+
+so this [21:33] clear distinction between the operands and operators is what leads us to what you might call abstract syntax tree yeah 
+so this syntax tree actually elevates replaces non terminals we have been i mean i have been um we have designed the language in such a way that we could easily elevate the operators to the intermediate nodes of this tree 
+we could talk we can talk of a root operator which is not we can talk of a intermediate operators and and or ok
+
+
+
+so in an abstract syntax tree the operators are always the intermediate nodes ok and the leaves 
+the leaves are all the identifiers of the operands right and this is of course not some thing that this is of course not some thing that’s absolutely full proof or like anything but um when we talk about distinction between operands and operators 
+we are saying that we are making a distinction between the various kinds of terminal symbols that are there in the parse tree and 
+
+we are [22:46] we are elevating some of them see if you look at the ultimate language  
+
+
+the ultimate programming language that we are interested in 
+we really not too interested in the non terminal symbols the concrete parts of the language the 
+the real down to earth as far to the road if you like are whatever is are all the terminal symbols but those terminal symbols in any programming language have some meaning there are some distinctions between what is an identifier what is an operator ok
+if you want to bring about this distinction then what you are interested is not in this concrete syntax tree but we are interested in what order should i apply the operators on the operands 
+
+in fact [23:52] if you look at this sentence the reason why we included parenthesis why
+
+
+
+ we have parenthesis in all our mathematical language or anything is to specify an order of application of operators on operands ok right 
+so this is especially true for what might be called infix operators it is not absolutely essential to have parenthesis but you can see that otherwise we would have to have a a uniform post fix notion or a uniform prefix notion if you have to avoid operators ok
+so in fact every language construct can be regarded as a operator yeah [noise] 
+so so so essentially if you are interest so if you are interested in giving meanings to languages you are not interested in the concrete parse tree 
+
+but you [24:54] are interested in the abstract syntax tree ok
+if you look at the way you have done arithmetic calculations in school you will see that you have actually i mean um remember that in a abstract syntax tree there are no brackets ok 
+given an arbitrary expression there are various ways of evaluating that expression you can choose to evaluate one operand rather than rather than another unless there is a
+
+
+explicit dependency that you cannot evaluate one operand before the other 
+so for example if you have if you have um let us say um let us say an arithmetic expression like um [25:42]
+
+three multiplied [27:10] by five plus  four multiplied by six yeah in in our normal arithmetic there is an implicit order 
+
+
+
+this is the order so the abstract syntax tree of this is just is just the following i mean it is just this 
+you first apply multiplication you cannot do this addition before doing both multiplications but it does not matter in which order you do these two multiplications and then you do the addition right
+so all are evaluation mechanisms actually refer more to a syntax to an abstract syntax tree than to the concrete parse tree of the expression yeah 
+so we have to keep keep this in mind so we will i will oftenly using these abstract syntax trees once we go 
+once we cross syntax i will be using only these abstract syntax trees yeah so let us keep that in mind 
+so now keeping these things in mind let us define a small programming language yeah it is it is very simple it is really amazingly simple that it is actually completely useless if you like yeah [27:10] 
+
+so what [27:14] does this programming language contain it contains no declarations contains only Boolean variables and expressions 
+
+
+
+it contains the following commands assignment sequencing um conditional and a simple looping command yeah and what i would like to do is to specify the syntax of this programming language 
+so that it clearly gives me all the possible syntactically valid programs in the language i can generate
+so that i can generate from the grammar all possible syntactically valid programs of the language for anybody who has done some programming it is clear that i mean um 
+it is clear that you know what what kinds of programs we are talking about in the sense that what would be syntactically valid what would not be syntactically valid but now there is a question of formalizing it and giving rules 
+production rules for the syntax in such a way that for example if you had to build a compiler or a translator for this language you should be able to do it without any problems yeah 
+so it is so in fact if it were a course on programming what i will what i could do since all of you know some programming or the other is i could just specify this much and then we could start writing programs yeah
+but but the for the purposes of translation and compilation you require to specify things in a great in some more detail 
+so let me just summarize the construction um summarize my coding of various constructs 
+
+so the [29:23] this this brown is part of the context free grammar notation i mean the notation for productions as i said this this brown looks very much like the bark of a tree 
+
+
+
+so branches of parse trees and so on are coded in this color 
+the actual terminal symbols are of course in black yeah um in this since we have two different kinds of entities commands and Boolean expressions um 
+i have i have used this dark brown for Boolean expressions and what might be called atomic commands the assignment is a atomic command for which i have used light green 
+all other compound commands they use this light blue and the actual program or the sentence of the language if you like is in dark brown yeah
+so this is whenever i change um change my color coding i will inform you but this is how i have defined the grammar 
+so what we will do is we will define the grammar in a top down fashion i mean the best way to do anything is top down so let us let us look at it top down 
+so so let us look at this grammar [30:50]
+
+so i [34:50] have the start symbol so as far as i am concerned  i mean i am only interested in sentences of the language of which and the sentences of the language and the sentences of this language are all programs ok
+
+
+ 
+unlike say a language like pascal or something there are no um there are no um there is no program heading and there are no let us say declarations so on
+so what is a what is a program in this language 
+so this rule specifies that a program is any command so given a any command is a full program of this language yeah so and what is the command of this language well a command could be an atomic command or it could be a sequence of two commands ok it could be a conditional command or it could be a looping command ok um
+so here i have used this these brown bars to indicate that this actually is four productions C arrow a 
+C arrow C semicolon C
+C arrow if B then C else C fi
+C arrow while B do C od yeah 
+right so this bar actually specifies the various alternatives that you have for each non terminal symbol right so so at the command level or what in most of these imperative languages are called statement level this the thing um
+this is these are the various productions we can look upon the definitions of the programming language in terms of several levels and this so this S gives you the production level gives you the program level and how the program level goes into the command level ok
+this command  level essentially tells you how um it is i have so far not specified what this atomic command a is but at this point it tells you how to form compound commands from simpler commands 
+so it just says that any simple command is a command and the sequence of two sequencing of two well simple or compound commands that’s why it is in blue this semi colon is the reserved word of the language so it is in black
+so the sequence of the two commands is a command in itself and if B is a Boolean expression then and then this conditional command this conditional compound command might contain might contain some compound commands inside it and this while B command contains a Boolean expression and a possibly a compound command um right 
+so so what it means is that as far as the grammar of commands is concerned this B and this a are also terminal symbols of this this level of grammar specification yeah 
+so so but what we should do is in order to get a complete definition we should also look into these atomic commands and the Boolean expressions 
+so let us look at the atomic command there is only so since i specified that there is only assignment statement there is only one atomic command yeah [34:50]
+
+so the [37:20] grammar atomic commands is just of this form let us assume that v is a Boolean variable and B is a Boolean expression then v assigned to B is a um ok 
+
+
+
+so then let me look at the Boolean so the language of Boolean expressions i am defining a different grammar just for variation ok
+i could have used the grammar that i have previously defined but that grammar is sort of a hatch patch grammar this is so let me look at this 
+so for one thing in that grammar there were the constant true and false were not there ok so the terminal true is a Boolean expression the terminal false is a Boolean expression any Boolean variable is a Boolean expression ok
+so these are the so if you take the language of Boolean expressions alone as a separate entity these are the terminal symbols of the language ok and the next level specifies how do you make compound Boolean expressions from simpler Boolean expressions right
+so if B is a boolean expression then not B is also a Boolean expression and given two Boolean expressions this is a Boolean expression and this also a Boolean expression and this is 
+what i have used here i have changed the grammar in the sense that here i have designed a fully parenthesized notion ok
+so i am for all Boolean expressions which are not atomic these are the atomic these are the atoms of the Boolean expression language 
+for all Boolean expressions that are not atomic i have enclosed a new parenthesis yeah right so 
+so now supposing we did not to that ok supposing instead we defined this grammar um considering  
+
+i have [37:25] gotten rid of true and false now just consider this grammar supposing we did get such we define such a grammar without parenthesis ok
+
+
+
+then consider this sentence this sentence is generated by this grammar it is very easy to give a derivation for that but not just that this sentence can actually be derived in two different ways yeah[37:50]
+
+so look[38:48] at this sentence v one or v two and v three and this is my grammar and what i could do is i could apply the B or B rule and derive this i could choose to expand this and get 
+
+
+
+
+since my first symbol has to v one i don’t really have any other alternative may so i get v one or B then i can choose to expand this replace this by B and B v one or v two and B 
+you can choose to expand this and replace it by v two then i can choose to expand this and get this yeah right [38:48]
+
+now i [39:36] could also make a different derivation so for example i can decide to apply this B and B here yeah and i can choose to expand this and give me v one or what did i do um 
+
+
+
+i chose to expand this and replace it by B or B then i chose to expand this and replace it by v one then i chose to expand this and replace it by v two then i chose to expand this and replace it by v three yeah and i get the same sentence right [39:36]
+
+but yeah [40:40]
+[student speaking ]
+there are not brackets in the language 
+[student : then how we know that it is v one or v two] 
+
+
+
+right so that is a point so that is what ambiguity is all about yeah so so the point is that if you were to look at the way in which this these productions have been done then and the way in which these productions have been done
+here and is a root operator so if you were to look at the abstract syntax tree then and is root operator and below that is a or and this the abstract syntax tree that you get yeah 
+i have chosen to just to give you the abstract syntax tree but you could for example take the concrete parse tree also of this derivation ok 
+now if you were to look at the abstract syntax tree of the other derivation where or is the root operator and and comes inside and [40:40]
+
+if you [41:15] look at these two symbol these two tree you can see that they are both actually different ok 
+there are not just two different derivations of the same sentence there are two different derivations with different syntax trees and these two different syntax trees actually affect
+
+
+
+how you can specify the meaning of this language 
+so for example v one had the value true [41:15]
+
+v one [41:16]and v two had the values true and v three were false then the evaluation of this syntax tree would give you value of true and the evaluation of this syntax tree would 
+
+
+
+give you a value of false ok
+so if you look upon syntax as ultimately having to specify a meaning then what you would like is a unique meaning to be specified in that sense this grammar for example falls short of being adequate representation of a unique expression language [41:55]
+
+an expression [41:58] language with unique meanings yeah 
+so we call such a we call such a grammar ambiguous 
+it is called syntactically ambiguous but the syntax is really a via media in which you are going to specify semantics 
+
+
+
+it is only a initial handle for the specification of semantics so 
+
+so let [42:30] us look at this 
+a grammar is ambiguous if there exists a sentence in the language with more than one parse tree ok right 
+so so ambiguity is an important constraint in the sense that it is not just that there are just two different derivations 
+it is that there are two different parse tree those parse trees are important both from the point of view of translating which means running programs i mean 
+if you are looking into the problem of compiling then you are really looking at the problem of executing programs in order to get meanings 
+so it is necessary for a program to be interpreted in exactly one way i mean and actually the the compiler for that program and the user of that programming language should both come to an agreement on how that program is to be interpreted right 
+so ambiguity has very serious consequences in specifying the meanings which means the execution behavior of programs right
+
+
+
+and actually a lot of our programming languages for example i have um  a lot of our programming languages actually do have ambiguity 
+so the the programming language that we have defined is totally unambiguous yeah 
+
+this grammar [44:18] specifies a language in which there is absolutely no ambiguity ok
+there is exactly one parse tree for every sentence in the language um
+
+
+
+now if you were to look at languages like [noise] pascal 
+so one one reason why so in the expression language there is always ambiguity in most languages but that is because that is because the expression language uses allows you to use normal mathematical notation ok
+so for example it allows you specify various things within an implicit order of evaluation so if you look at look at our if you look at our these expressions 
+
+for example [45:25] it allows you or normal mathematical notation allows you to specify this expression without any parenthesis where it is implicitly assumed that the syntax tree for this expression 
+if you remove the parenthesis it is still going to be this and nothing else for example it does if you if you remove the parenthesis 
+
+
+
+there is absolutely no reason except normal mathematical convention why you cant have a syntax tree of this form  
+there is absolutely no reason why except for normal mathematical convention there is absolutely no reason why you should not construct a syntax tree  
+supposing i removed this parenthesis ok but it is just that our mathematical convention says that well there is a precedence of operations which ensures that multiplication is done first and addition is done later  
+so if there is ambiguity if there is syntactic ambiguity then the order of evaluation should be that multiplication should precede addition other wise the order of evaluation is as specified by parenthesis ok
+so since this our normal mathematical notation most programming languages actually implement this ok
+there are this there are also in the at the command level too there are syntactic ambiguities for example in languages like pascal 
+one is what is known as the dangling else problem yeah so um if you look at the difference between our conditional the conditional that we have defined and pascal is that firstly we do not have both an if then and an if then else construct we have a perfect bracketing between um between these 
+
+for example [48:00] our conditional construct has a perfect bracketing 
+
+
+
+there is an if with a fi and a while do with an od ok 
+so there is no possibility of ambiguity except in the case of one construct 
+what is that
+no 
+where is the ambiguity 
+where is the ambiguity
+
+[student : yesterday um ]
+
+
+this grammar [48:55] does not provide ambiguity for that it is totally unambiguous for 
+
+
+
+that but there is still one place where there is ambiguity 
+the sequencing is ambiguous 
+so think about it we will come to it later 
+
+

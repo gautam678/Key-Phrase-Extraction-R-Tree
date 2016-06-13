@@ -1,0 +1,352 @@
+TRANSCRIPTOR: V.Srinivasa Rajkumar
+
+Educational Technology I.I.T. Delhi 
+presents
+
+A Video Course on Programming Languages
+by
+Dr.S.Arun Kumar 
+Deptt. of Comp.Sc. & Engg.
+I.I.T. Delhi 
+
+Lecture 5
+PLO:Syntax
+
+welcome to lecture five 
+so today we will do a slightly more complicated programming language um for which there is also a compiler um but before that let us briefly summarize what we did last time um and also answer the question 
+so we [00:47] will follow more or else the same abstraction levels except that this brown i will change um 
+
+
+
+so programs and commands and atomic commands and a context free grammar notation will remain the same um [noise]
+
+so let [01:06] us look at last times grammar um
+we had this grammar firstly the grammar of programs was that every program is just a command [noise] a command could either be some atomic command um or it could be a sequence of commands um 
+
+
+
+it could be a conditioner with a if b then c else c if where the where all these words in black are reserve words 
+so including this which you might not have seen um it acts as a closing bracket for if and similarly the od here acts as a closing bracket for the do um ok
+so one of things i said was so um we also define the notion of ambiguity for example we saw that for example so for example we ask the questions whether this given grammar was ambiguous 
+
+so as [02:05] i said our grammar is ambiguous if there exists a sentence in the language 
+
+
+generated with more than one parse tree it is implicit that if a grammar is ambiguous not only will its parse tree be um not only will there be a sentence with more than one parse tree 
+the same sentence will also have more than one abstract sentence tree because the abstract syntax tree is just obtained from the parse tree by elevating the operators to the root nodes and replacing the non terminal symbols by their appropriate operators yeah that is for a restricted class of parse trees ok 
+so the question was how this grammar is ambiguous 
+
+and actually [02:57] by in the case of these two control structures the conditional and the loop 
+
+
+
+i have eliminated the ambiguity by introducing two reserved words the closing bracket words fi and od 
+however this sequential composition or the sequencing operator which is a binary operator on commands actually gives you ambiguity 
+so let us see how that happens so for example you could have um you could have three commands [03:30]
+
+so let [07:50] us assume c one semicolon c two semicolon c three semicolon these three are either atomic or compound commands i don’t care 
+but these three commands actually have give you two different parse trees so you could for example you could have a parse tree like this 
+i am drawing triangles here to denote that these seats be the various commands themselves can expand into trees 
+so this is a tree in which this first this first semicolon is the root and the second semicolon is a right circle is a root of the right circle right
+
+
+
+
+another possible um parsing of this is is the following you could have a semicolon c one c two c three in which case in which case this the first semi colon is actually here 
+it forms the root of the left sub tree and the second semicolon is the root of the tree so strictly speaking there is ambiguity in this grammar 
+but um what we will see and what is obvious to anybody who has done some programming is that the sequencing operation in any programming language is associated in the sense that this so this really these two trees really correspond to different bracketing right 
+so for um this tree for example corresponds to the bracketing where you have c two and c three bracketed inside and c one and c three bracketed also outside and this tree corresponds to the case where you have c one and c two bracketed inside and then c three bracketed outside right 
+so this corresponds to c one semicolon c two the whole thing semicolon c three and this corresponds to c one semicolon c two semicolon c three right but since in general um sequencing operation as we will see later in the semantics is really a function composition operation and the function composition itself is associative 
+we will see that sequencing is also associative so what it means is that as far as the implementation of the language is concerned 
+any implementation can take any decision with regard to the semicolon operation so the fact that it is ambiguous does not matter as far as the runtime behavior or the meanings of the programs is concerned yeah
+so that’s a that’s a small matter which we have disposed of but in other case things can change as we saw we saw an expression of Boolean expressions where there was ambiguity if you did not introduce parenthesis and it can actually change the value of Boolean expression depending upon how you parse the Boolean expression right
+so so let us look at how if you were to actually look at a language reference manual um what would it what would it look like [07:50]
+so we [08:03] have so most languages since algol sixty use a notation called the backus naur form ok
+
+
+
+it is actually a notation um created by john backus and peter naur in the definition algol sixty 
+the algol sixty was the first um language which used rigorous syntactic form based on context free languages and context free grammars to define the language abs accurately before that for example um um
+backus was involved in the creation of fortan and the net result was that since there was no clear syntactic definition of the of the fortan language every fortan compiler written by various people gave different interpretations to the syntax of fortan and what that resulted in was fortan comp
+fortan programs were not compatible across machines so for example they way one compiler treated um the fortan syntax was different from from another compiler and moving programs from one from one machine or one compiler to another compiler became a huge problem 
+it became a huge problem in the sense that you required a whole team of programmers to actually either entirely rewrite that program to suit the new compiler or the new architecture of the machine or it required substantial rewriting and um and um patching up of programs so that they would run correctly in the on the new machine or on the new compiler ok um
+so [noise] by that time of course context free grammars had become quite popular as it a form of theoretical study and backus and naur define the algol sixty language using this notation um
+they were well the as far as as far as we are concerned what they used was for ensure readability they did not use non terminal symbols um um 
+i mean they did not use single symbol um single character non terminal symbols they used full words so they wrote statements within angle brackets and since there was no arrow mark on the type writer they used double colon equal which is now become standard ok 
+and so they wrote all the productions in this form in full the non terminals being enclosed in angle brackets and the arrow being replaced double colon and equals but actually what what is more convenient and which and which came up very soon is what is called the extended backus naur form ok
+the extended backus naur form um it just adds the power of specifying regular expressions within context free in a convenient fashion that’s that all it is merely a convince 
+we should remember that um firstly regular expressions are also context free but happens is that there are many constructs which for example allow for options or zero or more occurrences um and and in order to specify them by a context free grammar um with the limited notation that we have 
+what it means is the introduction of new non terminal symbols to aloow for those kinds of iterations so the extended backus naur form essentially uses the backus naur form extended to include iterations in choice 
+
+so for [11:55] example so here you have one thing so let us let us look at this 
+so supposing you had a backus naur form production of this form ok where alpha 
+
+
+
+beta and gamma are strings of terminals or non terminals ok 
+so if you had a production of this form A goes to alpha note that as usual i am using my light brown brackets for the for the notation for the backus naur form notation or for the context free grammar notation yeah
+so this would be equivalent to the two productions A goes to alpha B gamma where B is a new non terminal symbol which is not already there in your set of non terminals and B either goes to epsilon or to beta right
+so this just says this is something this notation this extended backus form notation is something that you will see you will see quite often for example on any unix machine if you run the man pages for some command you will find that there are various options given switches given and they are usually separated um they are usually enclosed in brackets of one kind or other 
+normally they use square brackets to represent the various options so a typical example is would be that 
+for examp if you had more than one option as in this case 
+
+the two [13:30] options the several options are either separated by bars or they are separated by commas and what it means is that you this is equivalent to this set of 
+
+
+
+productions with a new non terminal symbol and since in the definition of a programming language you do not want to clutter it up with new non terminal symbols which do not have any particular significance ok
+except that they aide in writing out a grammar more systematically if they do not have any logical significance you wouldn’t like to introduce them right so so 
+so for example so so um if you had the option of having an if a language like pascal you allowed both the statements both the if then statement and the if then else statement then the else clause is an option ok 
+which could be which ideally could be sep separated out then the else clause actually belongs with the if and the then as a logical as a grammatical entity 
+so you wouldn’t like to separate it and so what you would do is you would put that else clause in the definition of your language 
+if your language allowed an else clause and a normal one conditional like if then you would put the else clause within these square brackets right so
+so that it um so that you reduce the amount of the number of non terminal symbols remember that a programming language a real world programming language which is actually being used is actually quite a large piece of syntax by itself without without actually complicating it further by adding these extra non terminals which do not have any particular significance yeah
+so which have significance for the compiler which have significance for accurately specifying the language but other wise do not have grammatical significance yeah 
+so [noise] you should have significance for example with respect to ambiguity parsing and so on and so forth but do not have do not as a logical entity have a separate significance from the non terminal in which they are actually specified as an option right so the other thing is that is that you can have zero or more repetitions of some option 
+so if you were to have a production of this form A goes to alpha within braces beta gamma then this is equivalent to saying [16:13] that you two productions of the form A 
+
+
+
+goes to alpha B gamma where B is a new non terminal and B is this denotes um zero or more repetitions of the string B in your production of the string beta 
+so B either goes to epsilon which denotes a zero number of iterations um number of repetitions or it goes to beta B 
+so that you could have more than one occurrence of a beta right [noise] so so this is what this is the extended BNF notation which is normally used 
+the extended BNF notation is also very convenient for other practical reasons for example um [noise] 
+if you look at any pascal manual the syntax diagrams of pascal can be are directly equivalent to the extended BNF notation 
+so you just have to follow the arrow marks in the syntax diagram and they actually give you the productions ok [17:21]
+
+
+
+and they correspond more to the extended BNF notation than to the ordinary context free notation that they have already seen 
+so for it is it is important to know this for [noise] sorry for reading manuals for learning a new language and also for and um in general to know about the language right
+so let us let us look at um a language the last time we looked at a toy language which didn’t even exists so let us look at now look now at a language which actually does exists um 
+so this is the language PL zero this language is very much pascal like it was designed for the purposes of teaching programming languages compilers and so on as a first course by Nicolas worth himself the designer of pascal 
+
+he has[18:30] also written the compiler um which is available with us um so the main thing about PL zero is that it is even smaller than pascal 
+it has a single data type the main features are that it has a single data type are called off integers and nothing else no other data types um
+the only control structures are that are assignment sequencing bracketing looping and a one arm conditional that means it has a if then statement 
+there is no if then else it is just a it is just an if then statement um you can program and if then else two one arm conditions in sequence right where you can neglect the Boolean um 
+of course there are no Boolean data types in this 
+what it means is that you will have to encode your Booleans may be as integers ok  may be you zero for false one or any thing greater than zero for true ok 
+so um and [noise] but it does contain one important feature and that is the control abstraction mechanism 
+
+
+
+.
+so it actually contains a parameter list procedures which allows for a step wise refinement of programs which allow for an abstraction of  um which allow abstraction  complicated programs to be written in a structured fashion and it allows these parameter list procedures also to be true to be nested ok 
+so you can have a nesting which allows for a step wise refinement in the development of programs um 
+so let us let us look at the syntax of PL zero um let us look at 
+so i will i will keep using the arrow mark instead of the double colon equals for a production but i will use extended BNF notation otherwise right [noise]
+
+let us [26:30] define it in a top down fashion so a program my start symbol is P in this case i will not explicitly specify [noise] the terminal symbols and the non terminal symbols [noise] 
+i am sorry um
+i will not explicitly specify the terminals and the non terminals it is obvious that the terminal symbols are those that are colored black and the non terminal symbols are um others yeah and so the start symbol is however is P um
+so a PL zero program is a is a block which terminates with a dot with a period this is as in the case of pascal programs you terminate the program with a dot right 
+a block consists of a declaration followed by a statement i am saying a declaration and a statement um we will we will see that 
+so a declaration and also for brevity i don’t write full names for the non terminals i have tried to use non terminals um 
+i have tried to use single um single letter non terminal symbols which are sort of obvious what they mean 
+so a declaration D um can be this clause is optional since it is enclosed in light brown brackets so you can have a constant declaration a constant declaration which means this 
+
+
+
+
+word const is a reserved word ok and a constant declaration is a i have put these in dark brown I and N they stand for identifier and number which we will look at later 
+the reason i have put them in dark brown is because they are not really non terminals i mean there could be a infinite set of identifiers possible and of course infinite set of numbers we are considering an ideal machine for which we are specifying the syntax 
+the actual limits on the numbers and the lengths of the identifiers it is just going to be implementation dependant right
+that is not part of the syntax definition of the language right so so they are not really non terminals they are actually terminals but then there are in infinite number of them possible 
+so i will we will define them also but for the present just take this light um this dark brown I and N at phase value as identifiers um names and numbers since we have only integers those are the only kinds of data type we have and of course you could have a number of constant specified separated by commas 
+so the commas are reserved word of this language and this the moment the word const occurs there has to be at least one constant definition ok
+so this combination specifies one or more occurrences of the clause I equals N this also specifies how they should be separated they should be separated by a comma 
+if there is a const reserved word it should be it should be terminated by a semi colon so N so you can define a sequence of constants in a single declaration and terminate that sequence of constants the um terminate the entire declaration by a semicolon and of course you don’t need to have any constants at all 
+so this this entire clause is optional ok 
+now whether you have any constant declarations are not you could have variable declarations but you don’t need to so even that clause is optional 
+since there is only one kind of data type it is not necessary to explicitly specify what the variables are going to be of 
+so you can just specify the variables separated by commas but the moment and the moment you have this reserved word var occurring you have to have at least one identifier 
+if you have more they should be separated by commas and if you have this var the entire variable declaration will have to be terminated by a semi colon ok this is also optional 
+you could have procedure declarations and they are parameter list procedures and a procedure has a procedure has procedure as a reserved word they should be a identifier which should be terminated by a semi colon and there should be a block which is again terminated by a semi colon and the entire 
+the entire procedure is also optional you don’t need to have any procedures in your program and whether you have one or more of these clauses they should occur in this order and you have a statement 
+so oh [noise] i should have 
+i should not have written this 
+let us erase this we are just considering declarations this so declarations end here and of course the entire set of 
+since this is optional and this is optional and this is optional you could have a empty declaration too 
+so this production implicitly allows the production D goes to epsilon ok right [26:30]
+
+so um [29:45] now  let us look at the statement which is S so a block just consists of a declaration followed by a statement 
+
+
+
+so let us look at this definition of statements [noise] 
+so a statement itself could be empty a declaration could be empty which means an empty string itself is a program but that need not worry too much that is sort of a trivial case but a statement could be empty um otherwise you have an assignment 
+an assignment statement is a statement where an assignment is of course a identifier um colon equals an expression note that there is absolutely no relation between what identifiers are declared in this declaration and what identifiers are used in this statement 
+so the syntax is context free but the language feature is such that you cannot use a variable without declaring it ok 
+so that is something that is a context sensitive feature which is not specified in the syntax of the language yeah ok so then you have an explicit procedure called statement ok 
+so you can call an identifier and implicit meaning is that this identifier should have been declared as a procedure otherwise you cannot use call 
+call is a reserved word you have the one arm condition which is if a condition then a statement this whole thing is a single statement 
+you have the looping construct which is just as in pascal and you have compound statements you can call as a sequence of statements by bracketing them with a begin and end and call that a single statement 
+so this just say that you can have a begin you can have an S note that since S can produce a epsilon this could also be empty ok
+then you can have zero or more occurrences of this 
+so for example just a pair of brackets begin end itself is a statement it is what it is a trivial statement um which does nothing ok
+it corresponds to a no operation for example in hardware so you could have zero or more repetition um occurrences of this grammatical entity and they are all separated by a semicolon right and this whole this is a string right
+
+so now [29:55] we have this this um our previous our previous um if you look at the only 
+
+
+
+non terminal that i have not really been defied here are I and N
+which i will define in the end but all other non terminals here have been defined but of course they have also mean they 
+they have also defined at the expense of introducing new non terminals ok
+
+so for [30:05] example expressions conditions [noise] these are somethings that we have to define 
+
+
+
+so condition well the language is such that i have modified the language a bit firstly there is a unary condition [noise]
+which for any expression E um note that since the only data type available is integers the only expressions available are also only integers ok
+so this unary data type applies over all expressions um this unary condition this unary predicate applies over all condi over all expressions and yields the true or false 
+so this the reason for using this odd is well partly because well it is nice to have a unary predicate some unary predicate secondly this also 
+the reason for choosing odd is because there is a direct jump on not equals in most hardware so it where ever you have jump where
+or um even in your high level programs a large number of your programs of the are of the form while some variable is not equal to zero do something 
+so in all those cases you could check for oddness of that variable because a variable is also a expression as we will see and you could use this as a condition 
+so it is the other otherwise you have various binary relational operators ok i have simplified the original language to an certain extent by using single letter relational symbols 
+so that is why you have this odd looking symbols ok so this this is standard greater than 
+this is greater than or equals 
+this is equals this is not equals um it is the original pascal compiler for example allowed this as a not equal symbol um this less than and this less than or equals 
+the original PL zero compiler has defined by wirth actually assume that the less than equals and the greater than equals are already available on the key board which they are not so i have to change that um ok 
+conditions really dependant upon expressions either through unary predicates or through binary predicates and [32:40]
+
+let us [37:45] look at that expression language so before i get into the expression language i would like to say something um
+so um here in the case of the expression language you have you have a comprise between  two diff two extremes  
+one is of course that all of us think of expressions really in this form supposing you just consider the four operators that you have addition subtraction multiplication division 
+we normally think of a expression as being a sum of two expressions a difference of two expressions 
+a product of two expressions or a quotient of two expressions and of course we use brackets however what what happens is that this is ambiguous 
+
+
+
+
+this grammar is ambiguous because for example it doesn’t use parenthesis sufficiently it is possible to generate sequences which you understand to have a certain priority order of evaluation and which if you define the expression language this way the compiler need not ok 
+so it is ambiguous of course every variable is an expression every constant an integer constant is also an expression 
+those are the atomic statements of this grammar so the other extreme is what we have already seen and that is that you fully bracket every expression 
+whenever you have a binary operator you put bracket around the pair of operands so you can have E plus E enclosed in parenthesis E minus E enclosed in parenthesis E star E enclosed in parenthesis and E divided by E enclosed in parenthesis 
+but however most of us find it tedious to look at to actually write parenthesis over every thing and i mean you will have to key key in parenthesis every time 
+whenever there is a binary operator you would have to key in parenthesis ok so as far as we are concerned in our in our abstract language in our abstract syntax we will just 
+if you are looking at abstract syntax in string form we will just assume them to be fully parenthesized 
+if you are looking at abstract syntax as in tree form we will just draw the trees corresponding to whatever order of evaluations you want we want ok 
+because any fully parenthesized notation can be translated into a appropriate abstract tree which preserves the order of evaluation of the expressions and vice versa 
+given any abstract syntax tree you can transform that into a fully bracketed string of symbols ok but from the point of view of the compiler 
+this because it is ambiguous it is clearly unacceptable this because it is tedious for every programmer to write fully parenthesized versions makes it makes it in convenient 
+so what what one has to do is that um um what one has to do is that one has to strike a reasonable compromise and try to define the expression language in such a way it is ambiguous 
+it is not tedious and it follows all the conventions of um it follows all the normal conventions of mathematical notation yeah right
+in parsing let me mention that um this this this plus and minus are also overloaded unary operators 
+for example you can take negative numbers or you can write positive numbers as plus something right so then they become unary operators ok
+so a negative number is just the unary minus of a non negative integer ok so it is a unary operator there whereas when it occurs in such a form it is a bi 
+these these plus and minus are binary operators ok so we have to take that into account too there is overloading and we have we have always in our mathematics two we have used a lot of overloading 
+for example in our programming too um addition subtraction multiplication division multilic and multiplication are used for both real data types and over integer data types in the pascal language they are also used for set operations ok
+so they are overloaded tremendously um and this overloading is something that one should take care of um so [37:45]
+
+so the [37:50] normal convention that we that we follow are the unary operators usually bind the tightest ok that means a unary operator it’s influence extends over to the first available symbol and that’s it 
+and it takes precedence over everything else over all other operators except when there are parenthesis ok
+if you have a unary operator and an and a large expression enclosed in parenthesis then it is the negation of that entire expression and not of the first symbol after the expression um after the left parenthesis ok right 
+and plus and minus are of course overloaded and the normal mathematical convention is that um multiplication and division bind tighter than the binary operators plus and minus ok
+
+
+
+however multiplication and division looses precedence over the unary operator plus and minus [39:00]
+
+so if [39:00] you have so if you have for example minus five if you have an unparenthesized
+
+
+
+expression of this form minus five star minus three then um or minus five star three then what you mean is that this minus refers to this five and not to the entire expression this minus refers to this three and this star binds these two 
+so the appropriate bracketing is this right
+
+so um [39:35] we have to we have to take this conventions into account for the purpose of  um for giving your friendly user interface as far as the expression language is concerned 
+so that people with a normal knowledge of mathematics mathematic notation mathematical conventions can write programs can write expressions that they 
+they have been normally trained to write right so 
+so let us look at the expression language so what happens is that this the provision of this convenience mean means that you require a more 
+
+
+
+
+you require a um fairly large number of non terminals before you can expect to define it un ambiguously right [noise]
+
+so here [40:27] it is 
+this this language of expression is available in all books this some how or other deal with 
+parsing or compiling or anything so i wont i wont go in to great details about how it is unambiguous and how they have taken into account all the conventions but you can see at a glance that that it will work right
+so an expression is a term which might be preceded by a unary plus or minus or since this is a optional clause it may not be preceded by any of these ok
+so it might be an unsigned term if you like followed by optionally an addition operator and a term ok right
+the addition operators are just the binary plus and minus 
+
+
+
+so um please disregard this ok so any expression can be regarded either as a term a signed or unsigned term or a signed or unsigned term with an addition followed by a addition operator and a another term 
+a term um a term is something which either a factor which we will worry about later or it is a product of two factors or the quotient of two factors 
+so this M is a multiplicative operator so star and division the multiplication and division are multiplicative operators and a term is something that of this form either it is a factor or it is a product or quotient of two factors right 
+a factor is anything regarded as a single unit either it is an identifier which means that we are normally talking about variables or constants or it is actually a number specified as part of the expression or it is a whole expression in itself enclosed in parenthesis right
+so you can see that these terms that these three non terminals E T and F are mutually recursive because E is defined in terms of T 
+T is defined in terms of F 
+F is again defined in terms of E so they are mutually and circularly non recursive um circularly recursive and they actually take into account the fact that you can look upon 
+so if you can look upon an expression as basically the sum of two things 
+so you do not expand out into a term um so if you have um if you have that um the outermost operation that is to be done is an addition ok
+you have some large expression whose root operation is an addition operation that means that is the last operation to be done then your context free grammar is such that the left operand 
+supposing it is just an identifier so it will your productions will allow it to go from E to T then from T to F 
+F to I F to E again or F to I and from I again it will keep circularly revolving yeah ok [44:30]
+
+so we [44:32] will um so this grammar really takes precedence of operators into account 
+and the um the point is that this syntactical definition is absolutely essential for writing the compiler
+
+
+
+so for pragmatic reasons it is necessary to have this kind of syntactic definition but semantically we will just look upon  a expression as a signed or unsigned expression or something that is a binary operator just in terms of abstract trees 
+
+
+
+so we will either look at it if you want to represent them linearly either as fully parenthesized expressions or abstract syntax trees yeah so
+
+so um [45:25] lastly let us come to the last part which is the definition of the number 
+so a number is either a signed or unsigned integer so this is an optional clause and the definition is that it can have a digit and it should have a digit followed by more digits ok and digit of course is defined as a character zero to nine 
+
+
+
+so an identifier we follow normal pascal rules an identifier should start with a letter in the case of the PL zero compiler all the alphabet consists of only upper case letters 
+it is very trivial to modify it to include lower case letters too but what really distinguishes a number from an identifier is the occurrence of a letter or a plus or minus symbol or a digit that is what really distinguishes that ok
+so the occurrence of the letter this plus or minus is really an operation it is not um it is not really i mean you are actually going to take if you have a negative number you are actually going to take the corresponding integer and neglect it as a operation right 
+so in the case of an identifier that is why it should begin with a letter and um it may be followed by one or more letters or digits right and the reason for removing this N and I productions from the main grammar is that this these rules are really not part of parsing 
+when they are part of what is known as lexical analysis ok
+for example you can write such rules also for recognizing that the word while w h i l e as been recognized as a single word 
+the word begin has been recognized as a single word so these are actually part of the process or what is known as scanning or lexical analysis 
+so typically if you look at a program written in this language it just consists of  it is a file of characters and we would we would like to divide up the program into words or what are known as lexemes or you which which really describe each entity in the program 
+so instead of a file of characters we would like to regard it has a file of words and how are you going to regard it as a file of words 
+you should be able to recognize all those reserved words you should scan all the words and decide whether they are reserved words or if they are not reserved words you should be able to treat them as identifiers ok 
+or if they are constants you should be able to read out the entire constant in this case for example a string of digits representing an integer or a or a string of or a plus or minus followed by a string of digits representing an integer 
+so then you would look at the entire thing as a single unit so a scanner typically takes a file of characters and gives you a file of words [49:15]
+
+or actually [50:25] what they are known as so you have the user program is just a file of characters and what you get is a file of lexemes yeah 
+
+
+
+the word file is used in a very general fashion i mean it does not mean a desk file it means any unbounded sequence ordered sequence of object 
+so the process of scanning converts the file of characters in to a file of lexemes and then the process of parsing actually takes over the handling 
+so that is one reason why i have not why i have not worried too much about for example these reserved words [50:25]
+
+so i [50:30] am i am what i am saying is the process of scanning would have created a single lexeme out of all these 
+all these things are a single unit yeah and they would they will after scanning they would lose the status of being a string of characters 
+they would be some single entity unit in the form of some structured um an element of some structured data type which gives the identification as to what this unit is ok
+so it could be an index into a table which says that and with other details like it is a reserved word or it is an identifier or it is a constant 	
+it is striped in a more complicated language whether it is a integer type or so on will be filled on later may be after the area 
+after the um after the process of parsing and so on is through so you will actually create a 
+
+
+
+huge table of the amount of information that you have to ab extract from the program through all the process of compiling and keep it for use for checking for example 
+type checking runtime type checks compile time type checks to detect un declared variables which also a good way of detecting spelling mistakes right 
+so all these terminal symbols will actually become single units in some table and they the file of lexemes will just be a single unit which gives an index in to the table yeah ok
+so that that table is resident always in memory for reference during the process of compiling 
+for example you have to check various context sensitive um issues like hasn’t been declared before right 
+if it is been declared what is the type 
+is it been assigned the right type 
+is it being used in a expression in the right type so you require this table of information for each identifier reserved word or each lexeme to know whether it is being used correctly in the program right
+so this is the syntax of the language and um we will get on in future to defining the semantics of the language 
+so we will start the next lecture with the basic notions of semantics and and we will then add on to this toy language new features and see how they have to be defined 
+the syntactic definitions of these new features is not very critical because you have all the basic material as long as you can parenthesize expressions as long as you parenthesizes the new features that you are um [noise] that you are introducing without ambiguity or as long as you define them in some reasonably good syntax 
+it is not very important how they look it is more important how the abstract syntax trees look and what meaning you give to the abstract syntax tree yeah 
+thank you  
+ 

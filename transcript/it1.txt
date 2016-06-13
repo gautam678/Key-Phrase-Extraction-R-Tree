@@ -1,0 +1,303 @@
+Introduction to Internet
+
+let me welcome you all to this course on internet technologies now as the name implies you can understand that as part of this course we would be talking on various aspects about the internet 
+the way it has evolved the way it has you can say it has incorporated different technologies and techniques and applications under a single umbrella making it the most you can say the most popularly used infrastructure in terms of information exchange and communication in today 
+so in this introductory lecture we would try to basically look into the way internet has evolved over the years 
+the way the technology has developed we would briefly have a look at the different important internet applications that you have today 
+there is another important thing which also we try to talk about it is the way a new standard is submitted and is recognized in the internet community 
+we shall also look about it and finally we would have a quick look at the overall contents of this course on internet technologies 
+we would be talking about what are the different topics and modules that we would be covering in course of the future lectures 
+so lets us get started the topic of today’s discussion is introduction to internet 
+
+so first let us try to talk about what is an internet now as the definitions goes and internet can be defined as the network which is formed by the co-operative interconnection of a large number of computer networks 
+now since internet is formed by the interconnection of a number of computer networks sometimes it is also known as a network of networks 
+now here there are a few few interesting things that work with internet the first and foremost is that there is no single owner of the internet 
+now just unlike a network that you can see in your organization may be your organization owns the network in contrast internet you cannot identify a single owner who owns or who administrates or manages the whole network 
+suppose you are a member of the internet group which means you are computer is also connected to the internet 
+may be it is so as simple dial up telephone line from your residence now in that case your also a part of the internet 
+so what i mean to say is that every person who makes a connection to the internet becomes a part of the owner okay 
+so i repeat there is no central administration or central authority to the internet now just talking about the way internet has emerged as a network of network um 
+if you look into the history of computer networks you will find that computer networks initially started in the later sixties 
+they were mainly some clusters of some computers in different laboratories and organizations for the main purpose was to connect several computers together 
+so as to achieve a number of goals like exchanging messages sharing some information etcetera 
+now the networks that were at that time they share some characteristics like they were all proprietary in nature 
+the network that was there which was connecting a number of computers all the computers were of the same type or they were for the same vendor 
+for example we could have had a network which comprised of only ibm computers a network with only deck computers and so on 
+now with the passage of time people felt that will these kind of small networks have emerged in the different labtories and organizations like small islands 
+as the requirement or need of the people grew with time they felt the necessity to connect these networks together 
+so that a user of network A can communicator with a user of network B okay there should be a way of communicating between them but of course in order to that one big problem needed to be solved 
+that was the problem of compatibility i told earlier that initially the networks are mostly proprietary 
+a network of say that had connected a number of ibm computers were a totally unknown entity to a hp computer 
+the hp computer did not understand how the ibm network would work so there as to be a common binding force or a common standard that would all the computers across this networks to talk or communicated themselves okay 
+so this was one of the motivation now talking about a network of networks internet looks something like this 
+
+we have a number of such networks which are connected in some way of course picture may not look like this 
+the diagram as i have shown it is a pure star network but in practice this does not certainly look like this 
+the purpose of this diagram is to give you a logical picture of the internet there are a number of different networks which are all connected through some basic back bone network 
+the central place this portion this is the central back bone network which connects all the networks together okay 
+
+so the internet what is it actually in practice well internet is not just the network internet is not just the programs or the applications that the users of the internet use internet is not just some document or some resources which are available on some computer in the network but rather it comprises of a number of different things 
+firstly it is a community of people who use and develop the network so people are also part of the internet 
+so without people internet would not have existed internet also consist of a collection of resources 
+this is very important because if this resources were not there possible so many peoples would not have use the internet 
+now by having a connectivity or this network of networks established what we have is that these resources can be reached from anywhere in the internet 
+so we have some kind of network and over the network you can reach any resource you want to from any other place 
+this is a basic idea and internet also provides a set up to facilitate the collaboration now when i say collaboration this can be simple messaging facilities like electronic mail or it can be some more concerted collaborative efforts like having bulletin board system or somebody can pores some problems or a discussion forum through which you can start an open discussion on some topic 
+which of course you want to start a discussion on so particularly this kind of collaboration is very useful in a number of you can say areas in particular among the members of the research and educational communities 
+they find this kind of collaborative facility invaluable suppose i have a problem i am unable to solve if i put it in the discussion forum 
+may be some where sitting some where else would be able to solve my problem and give me a response of the solution to the problem okay 
+and talking about the about common standard that bangs on the network together there is a standard protocol called TCP and IP 
+TCP stands for transmission control protocol and IP stands for internet protocol so as the scenario is there today 
+well any computer or any network if it want to get connected to the internet the computer or the network must understand the language of TCP IP 
+so all the message exchanges that go on in internet they use the syntax and the format of the TCP IP message packets 
+so if your computer understands TCP IP then your computer possible can become a part of the internet 
+if you just have a connectivity to it okay 
+
+now talking about the evaluation of the internet it started as early as in the nineteen fifties where the US defense organization ARPA it stands for advanced research projects agency
+this started to network a number of computers that are funded by the in a very small way so a few computers which are located in different paths of the country where provided with some sort of connectivity 
+so that they can communicate among themselves now subsequently while it continued for some time like this 
+in nineteen seventies and beyond this ARPA ARPA became to know as ARPA network advanced research project agency network 
+so ARPANET started to create a standard which is basically the predecessor to the TCP standard that we have today 
+so at that time the standard that was proposed that is not exactly TCP but it is step in the right direction 
+so it was a premiliminary protocol which through subsequent you can say refinents and modification became finally the TCP as we see today 
+in nineteen seventy one the universities were added to the network the main purpose was that many of the defense funded research used to take place in the universities and ARPANET felt universities should be part of the network and some basic internet services like telnet and FTP were made available 
+now these you will be studying later in more detail now using telnet you can start remote session on a different computer sitting on your own computer and using using FTP file transfer protocol 
+you can transfer a file or a group of files between two machines these were the basic facilities which were provided at a that time for communicating between machines 
+in nineteen seventy two the first version of electronic mail came into the you can say being coming to be first email message was sent during that time 
+
+in seventy three ARPANET spread its reach beyond US it connected to some sites or locations in England or Norway 
+so it is in nineteen seventy three ARPANET started to spread across continents nineteen seventy four TCP was recognized as the standard and it was used for communication across a system of networks 
+so you can say that in nineteen seventy four people actually started to talk about having a number of networks 
+they will all will be speaking the same language and TCP was the vehicle which was used to do or achieve this 
+now nineteen eighty two the US department of defense it stated building their own defense data network based on the same technology that were developed in ARPANET 
+see this ARPANET as it has evolved it also brought along with it a number of different technologies some protocols some standards which people used and were actually able to communicate 
+so the US department of defense saw that well here we have a technology which we can use to greet benefit for our case of application also though so they simply borrowed the technology for their own application and they stated using it 
+in nineteen eighty three this this ARPANET actually got spit into ARPANET and there was a new network military network MILNET 
+which is created which of course had some additional security requirements that’s why they got spit into two 
+
+in eighty three we saw the internet which is very familiar to the internet we see today so in nineteen eighty three the internet started to actually take shape as we see it 
+TCP IP was recognized as a standard 
+then in nineteen eighty six national science foundation this stated another network NFSNET now NFSNET the objective was very simple 
+the objective was to create very strong back bone network used to connect the regional networks okay 
+as you can see here this NFSNET is a system of regional networks which were connected over a back bone network 
+so here there are some networking devices called routers which were used and routers belonging to the different regional networks were strongly connected among themselves and this constituted what is called a back bone network and the main purpose of NFSNET was to create a very powerful back bone network 
+which would provide these so called back bone for future generation communication systems 
+in nineteen ninety one some new applications like Archie and gopher were released well many of you may not have heard about these application action gopher 
+see at that time applications like the ftp file transfer protocol become very popular people stated to keep a large number of resources on the different ftp servers and through ftp you can basically connect to that server and you can download the material whatever you want 
+it is very similar to the world wide web that we see today i am sure most of you have used the internet through the world wide web through the browser and you know how it looks like 
+but at that time there was no user interface just we have to give command get a file and after you bring the file to a machine you can open it and see what it is okay 
+now the main problem that people used to face that time is suppose i want some resources say i want a particular document on a subject 
+so how do i know where that subject or that document is located while while if i if know the address at that time some big ftp catalogs were published 
+i can look at the catalog and find out where these documents are located in this ftp server so let me connect there and see if i can find it out 
+so this Archive was developed as an ftp search engine well many of you are familiar with google yahoo the search engines which people today 
+so at that time Archie was the search engine through which given a topic you want to search for Archie  return a list of ftp sites where you could possible get that topic and gopher was you can say a more intelligent version of Archie gopher showed you the documents in a category and sub category few 
+it was like a global view you can browse through categories and subcategories suppose flower rose black rose 
+if you click on black rose you can get a list of place you can get information about black rose 
+so this gopher allowed you to browse ftp sites through well defined you can say category and subcategory view 
+well gopher was a little more general it covered the ftp sites as well as some other non ftp sites also but i am not going into those details right now 
+
+well nineteen ninety two the internet linked more than seventeen thousand networks there were about three million hosts 
+nineteen ninety three the world wide web application were launched today you know this world wide web is a defacto standard anyone owning a computer 
+they they use world wide web they use either um the internet explorer or mozilla konqueror
+some kind of browser they use to access the world wide web nineteen ninety five the concept of networks service providers came into be and this network service providers start to offer service 
+but earlier you had to build your own network and it was um it was your responsibility to get your network connected to the internet back bone 
+now there are service providers well in india there are service providers like vsnl like satyam like reliance there are so many today 
+now you can approach them they will provide you a connection and it would be there responsibility to get your network connected to the internet back bone okay 
+so in nineteen ninety five you can understand you have about thirty million users so the growth was fantastic 
+
+so this simple file shows you the exponential nature of growth that internet enjoys you see in nineteen eighty nine from about ten million hosts in two thousand one you have hundred million hosts 
+so over a period of time the number of nodes have increased in a fantastic way so this exponential growth continues and and as of today we have more than a billion hosts which are connected in the internet okay
+
+now as the internet came in place and it became popular with the passage of time there were a number of internet applications that were developed 
+some were accepted widely some they were not accepted and finally they got rejected but here i am listing a few of the internet application which became popular in fact are still very popular 
+in fact all of them the first one telnet i told you about this telnet allows a user to log into a remote computer and start a so called remote session 
+that means i am sitting on my computer i am running a program i am viewing the file but actually everything is happening on the other computer 
+what i am seeing on my screen is the output of that program is coming straight away to my screen 
+and i am having an illusion that i am actually sitting on that other computer not on my computer okay 
+similarly you can have file transfer protocol this i have um this also i have mentioned using this you can transfer file between machines 
+then you have the so called electronic mail in fact today email is the single largest application which is used by people 
+while every person who gets connected to the internet invariable uses email this email has become you can say part and partsell of daily life and is very fast making the so called surface mail 
+which somebody also calls snail in comparison with the speed so the surface mail is becoming obsolete and redundant in many cases 
+many of us today prefer to send documents and reports by email rather than by surface mail 
+gopher i have mentioned gopher although today you do not see many gopher application but there was a time in eighties and mid nineties where gopher was very popular 
+it was you can’t say just a previous version of the internet as we see today 
+so through gopher you could browse through categories and sub categories 
+you can access the document or the resource you want to access and you can 
+you can use it in a convenient way 
+this internet relay chat is another application which is also very widely used by people through this internet relay chat you have you can say a medium through which a number of persons can communicate among themselves 
+well if i type in some message that message can be viewed by all members of the group with whom i am i am participating in that chat 
+so this chat is a very useful tool and if used in the proper context can be can prove prove itself to be extremely useful and beneficial particularly in education 
+this Usenet news this is also a very important application news well broadly this is like a discussion group news group or a discussion forum say i have a discussion forum through i can start a discussion 
+i can float a topic the other members of the community who are also there in the forum can post their reviews i can see them while has i mentioned if i have a problem i post the problem on the discussion forum and someone else may be coming up with a solution and posting it there 
+while the advantage is that i may be having my personal problem which i have posed and someone else have posted a solution to this but there may be a number of other people who are having similar problem 
+so if they look through the mails that are getting exchanged through the discussion forum they can possible also find a solution to their problem automatically okay by just following the discussion that is going on 
+and of course lastly the world wide web which is the most important application that we are today infact today world wide web can we treat it in as a umbrella and under the umbrella all other protocols can be used like electronic mail like ftp like news groups everything else can be accessed under the same umbrella of world wide web 
+so world wide web will well itself is an application and it also integrates other application together okay 
+so today we have a single common interface we start a browser and through a browser we can have basical access everything okay 
+now now let us talk about something else see this internet has evolved over a period of time there are new protocols which have come up many of them have become so popular 
+now suppose a new protocol comes up lets take an example say the email electronic mail 
+now you know 
+today all the machines all the computers all the operating systems they support electronic mail and some how they are compatible 
+if i send a mail from one computer to the other which reaches the destination so you can you can guess there has to be some kind of a standardization effort that goes on somewhere 
+like suppose i am a company i manufacture computers i manufacture operating systems i design software 
+so if i want to built a computer system which also will be having a mail system which will be compliant or compatible with the other systems around me 
+then i must know what this email standard is how am i to develop the software so the question of internet standards come into the picture 
+now i had mentioned in the internet there is no central agency no central administration so how come this standards are enforced 
+how come this standards are published well 
+there is a well accepted and practiced way of doing it let us now look at this these internet standards are are also called request for comments or RFC documents 
+
+now let us try to see what this RFC document are and who are responsible for the publication of these and how are these get standardized okay 
+
+so first let us look at some of the internet societies most of them are these are basically volunteer um voluntary organizations they are essentially non profit organizations 
+they are created in order to bind the different activities in the internet together then basically volunteer organization may be i can be a member of such a group if i want to okay 
+so lets see in this so called internet society we have three groups one is called the internet architecture board IAB internet engineering task force IETF and internet engineering steering group or IESG 
+now these groups have been created they exist and each of them have some well defined goal but here 
+we are more interested in the process through which this request for comments or RFC documents are published 
+now when a new RFC document needs to be published well means a new working group has to be formed but working group is not that well defined in a sense 
+for example if i come with a new suggestion say means i i understand or i believe that i have discovered or designed protocol which should be very beneficial in the internet environment 
+so what i do i can approach those groups and as groups can formulate a i know working group of which i can be a member 
+there will be working groups which will perform like this mostly they will be coming forward and these working groups are supported or chartered by the IETF 
+so the whatver i am putting this IETF will be supporting my effort as i said membership is voluntary well working group well myself and my team my team members can be part of the working group 
+which would be negotiating the standardization of the protocol that we have developed so in this way i can develop several other working groups spread all around the globe they can be independently working on the on a on a different aspects of the standardization process 
+
+now let us see the basic process involved is as follows the working group will start by making a draft version of the document 
+suppose i have the new idea as i said new protocol we have designed so we first write down our protocol details in form of a design document that is the draft document that the working group designs 
+then this draft document will be placed in the internet draft working directory this is an online directory which other members of the internet community can also have a look like 
+now that anybody at any time cannot put a draft in this internet draft directory before doing that you have to get an approval by the IETF 
+that’s why you are working group must be you can approved by them only then you can submit your design document or draft to the to the internet online working directory 
+so this is the internet draft now after that what happens this is an online directory which is accessible  by everybody 
+this internet draft will remain there for six months six months is the limit so within the six months feedback reviews and comments will be received by the different members of the internet community 
+so after that those reviews and feedback will be  analyzed and it will be decided that whether to go ahead with the standardization or this is no good no one like this so let us reject it 
+so over the period of six months reviews and comments on the draft are obtained 
+
+now the IESG group may now approve the publication of the draft as an RFC if the feedback and the comments that i have been received are favorable 
+if a large number of people feel that this standard merits publications as an RFC 
+see as one thing  let me tell you this RFC is a standard document there are thousands of such RFC’s available but out of them only a few have been actually implemented and has become popular 
+so juts having it has a standard does not mean that it has to be um very popular standard which everyone uses okay 
+so this IESG this internet engineering um steering group this can approve the publication of the draft as a request for common document within this six month period 
+but if it sees that the comments are not favorable then it is simply withdrawn from the directory okay 
+now the working group well after it has been published as an RFC the working group subsequently refine the draft to produce revised versions of the protocol 
+suppose in the in the initial version we have proposed a protocol which are of version one point zero subsequently we can come up with a version one point one one point two and so on 
+now although anyone come with the revised version but the the IESG will always try to get it approved by the original working group who had come up with the original draft the first version of the draft okay right 
+
+now let us diagrammatically see that what is the process that gets involved here this internet draft this is the place where the initial drafts are submitted 
+now after the initial draft are submitted after the six months period comments are obtained as i said 
+so after that depending on the comments the draft can go to one of three place of course it can be rejected 
+i am not showing the rejection here well sum up the drafts may be accepted as informal RFC informational RFC 
+well informational RFC means it is an RFC which does not specify a standard but rather it it is some thing like a tutorial 
+it gives you detail inside about some some particular topic which the IESG feels that this is important for the internet community 
+so let us also publish this as an informational document or informational RFC so this is one type 
+the second type is that you can also publish a document based on some experimental results 
+suppose i analyze the nature of internet traffic what kind of internet application running on what kind of bandwidth they consume what kind of patter then follow 
+now this piece of statistics may be useful to a large number of people over the internet so if i prepare a document which would be highlighting this things this would be more like a experimental data or experimental results 
+so there can be some draft which can be experimental in nature but the drafts which are basically meant to be accepted a standard first step they gets accepted as a proposed standard 
+then after revision and comments draft standard is prepared which finally over a period of time gets accepted as an internet standard 
+so these shade boxes this green shaded boxes they are the temporary states okay these are temporary states 
+this internet draft proposed standard draft standard these are temporary states whereas this internet standard experimental or and informational 
+these are more or less permanent states a draft can remain in this state for a relatively long period of time several years
+of course after certain time the IESG may feel there were some RFC’s which were important but in the present day context they have lost significance 
+so let us move it to this so called historic state they will remain but they will remain as a historic document this has an historic significance but not so important in the present day context okay 
+so in the present day context only those document that are important they will remain either in the internet standard or experimental or in the informational states okay 
+so this gives you a rough idea about the publication of RFC now let us see why um only one question is that you may argue that well i know that these RFC documents are there but if i want to look for some standard where do i look for there must be places where i should find them okay yes there are 
+
+but first quickly look at some of the important RFC’s as i have mentioned thousands of them for instance RFC eight twenty one refers to the mail transfer protocol SMTP this is the main email standard 
+this RFC seven ninety one this refers to the IP protocol of the TCP IP okay internet protocol seven ninety three refers to the TCP two six one six refers to the hypertext transfer protocol that is a protocol which is which is followed between a web server and a browser for accessing web documents 
+similarly two zero four five is for MIME which is also for electronic mail this one three two one is used for security for message authentication RFC one eight six six for hypertext mark up language which are used for designing web pages and two four six seven again for cryptography application two six three one also again for some cryptographic applications 
+now if you want to search for a particular document of course you can go to a search engine like google 
+suppose you are trying to search a look for the RFC document for ftp you can always get the search key words RFC ftp and press enter that will find list of sites where you can get them 
+but you can also look at a number of so called RFC oriented sites here i have listed three but there are many others 
+
+so you can just visit these sites www dot faqs dot org slash rfcs www dot irtef dot org slash rfc dot html or www dot rfc dot net 
+so here you will get all the RFC’s they um the details you can have a look at it and if you want you can download it on your computer 
+whatever you want you can do with it so these RFC documents are all available online and anyone particularly the persons who want to know about the protocols from a educational point of view from knowledge point of view or even persons who want to develop some tool which will be conforming to some standard 
+so these um RFC documents are the authentic standard documents if you want to have your tool to be complined to the other tools that are available elsewhere 
+you must ensure that your RFC document whatever specification is there that must be adhered to okay fine 
+so now let us have a quick look at the contents of the topics would be covering during the course of this particular internet technologies course work okay 
+so we take a quick look at the topics to be covered well in the first module well we are going ahead with lecture one now in our next lecture we would be taking up quick review of network technologies 
+
+well i except that most of you have some basic background of computer networks well but there may be a few of you who does not have significant background in computer networks or may be you had studied some concepts some time back you may not remember them 
+so to make this course you can say this course module complete i will brush through the basic concepts of computer networking in the second lecture so that the relevant terminologies and concepts which may be required in the subsequent discussions would be refreshed 
+
+well in the second module we would be looking into into some detail regarding the standard as i told you the TCP and IP protocol transmission control protocol and IP protocol which as i mentioned is the basic driving force behind the internet 
+now here just let me tell you this TCP IP this is talked about our standard now actually TCP and IP are two different protocols as you will see in detail as we proceed through to these lectures 
+now the basic task of the IP protocol is to ensure that the message packets that are being sent to a particular destination 
+they follow the appropriate root and they finally reach the correct destination it is the responsibility of the IP software or the IP network layer it is sometimes called to ensure that packets are delivered at the destination but TCP in contrast this is a protocol or a program which is interactive more closely with the user application 
+TCP ensures that a message that is being transmitted to a destination gets transmitted in a correct way well a message may be long 
+it may have to be divided into smaller message packets which will be in turn given to IP for actual transmission 
+so all these things will be covered in detail in the second module so we will be having three lectures devoted to this 
+
+well in the third module we would be looking into some more detail regarding how the IP layer ensures that packets are routed or forwarded in the correct direction 
+so i have mentioned that one responsibility of the IP layer is to ensure that packets that come they reach the correct destination but this cannot happen by magic 
+obviously IP layer has to take some decision based on the destination address of the packet and few other factors and this is certainly a not a very easy um(46.04)
+this is an involved thing because as you can understand i just told you that all across the world there are billions of computers 
+so how do ensure any destination address belonging to any computer the packet will finally find a way to it through some path 
+this has to be some you can say standardization or some standard algorithm for ensuring this 
+so here we would be talking about first thing is IP sub netting and addressing this is one topic for you will basically talking about how you can make more efficient utilization of this so called IP address 
+now in the IP protocol all computer addresses are treated as thirty two bit quantities so how to best utilize this thirty two bits 
+we shall be having a look at this 
+then we shall talk about internet routing protocols there are two lectures devoted to this 
+now why do we talk about internet routing protocols we were actually talking about IP 
+now here again there are a number of different scenarios there can be several routers which belong to the same place same organization 
+there can be routers switch belong to different organizations the kind of messages they should among themselves 
+so that they have the power to take the decision that where i will be finally forwarding a packet given the destination address that decision becomes reasonable correct one 
+so there are a number of approaches and algorithms used for this would be discussing about these and would also talk about the next generation of IP that is called IP version six 
+which we will see which actually improves upon the present IP version in a number of different ways 
+well all things will be looking in detail 
+
+in module four we would be looking at the common internet applications first we would talk we ill talk of the basic because on a platform on which this internet application are based 
+these are the client server application then we would be talking about the domain name system DNS then some applications telnet FTP email and finally world wide web 
+now as part of these lectures we would be looking not only at a how to use this protocols but also at the basic technology the basic underlying technology that is used to make this protocols work for 
+for example when you talk about world wide web we will not only see how to use the world wide web you already know just through the browser 
+if you type in some address you you basically get back a page but we would also look at what is the basic underlying network technology what kind of messages get exchanged between your browser and the web server 
+how do they send back the message how do they send the request and so on so all these things would be discussed in module four 
+
+now in the fifth module we will be addressing the problem of creating web pages now now if you talk of the um world wide web there we have a infrastructure where we interface through we can access some resources 
+now here in this module we would be addressing the question how are the resources formatted 
+if i want to write a document which you want to put on a server on a web server how do i write it 
+now most of the documents they did created in a language called hyper text markup language or HTML 
+now in three lectures of this module we would be talking of various aspects of HTML what are the different ways we can format the text for example how you can how you can change colors changing font size styling formatting text centering justified including tables including images how can provide links to other documents bulleting frames and so many other things 
+so here our idea would be to give you some basic background about HTML so that you can write a web page directly in HTML and you can get the desired felling as you as you are intended to and in the last lecture we would be talking about XML which is fast becoming you can emerging standard well HTML is a static language 
+this HTML supports a few features which are fixed by the definition in contrast XML is a language where you can expand the capabilities of the language 
+so most of the modern browsers they support support xml and even the future generation of HTML they will be based on xml 
+so so this xml is something which is very important which you will that everyone should know about 
+
+well in this sixth module well here also we would be taking about designing web pages but interactive web pages this is something a little different from what we talked about previously 
+well in the conventional or so called static web page what we actually do is that there we have some document which you call a web page located on the web server from the browser i can send a request that web page comes back to me 
+i can view it but in some cases there has to be a two way communication between the client which is the browser and the web server 
+lets take a very simple example suppose you know that today most of the examination results are published on the internet 
+suppose i want to look at my result so i visit the website where the result is published i type in my roll number press enter and after some time i get back my name my result everything 
+see my name result everything well well it is not expected that this same page was residing in the web server exactly in this form must be this was there in some database in response to the roll number i have typed 
+somebody on the other side extracted the information from the database composed it into a suitable form and sent it back to me okay 
+this is what you mean by interactive web pages the web pages are not static by they are generated dynamically based on the user requests 
+so for generating this interactive web pages you can have so far called HTML forms in conjunction with so called common gateway interface or CGI scripts 
+these we will see in detail later and addition you can have something called image maps where you can have a picture and if you click on a part of the um picture you go some where you click on some other part of the same picture you go some where 
+just imagine that you have the map of India you click on a state you go to the website of that state something like this and of course at the end 
+we would be looking at other technologies because the number of technologies that too many and and it is not possible or not advisable to teach all of them at the same time 
+so we would be concentrating on some technologies like the active server pages for example ASP 
+there are other technologies like php which are also there there are many others so we would be concentrating on one such technology and see that how using the technology also we can develop this kind of interactive pages in a very easy way 
+
+now in the seventh module we would be concentrating on learning a new language practical extraction and reporting language in short PERL 
+well there will be four lectures devoted to PERL and the purpose of teaching PERL is basically PERL is a very nice language which has extremely powerful string handling capabilities 
+now we will see later when you discuss say for example CGI scripts we will see that when we develop this kind of interactive applications when we develop a program which you CGI scripts program you need very powerful string handling capabilities and possiblely PERL is a very good candaite for this 
+there can be other alternatives also PERL is not the only choice but PERL is a very powerful language which is used by many people for developing CGI scripts and so we would discuss PERL in some depth 
+
+then in the next module we would talk about java script and we spend in three lectures on it java script essentially these are extension of HTML you can say it runs on your browser and provides with a number of different very attractive facilities like moving messages some window popping up some automatic checks 
+you type in something if it is not within the range immediately an error box opens up  and number of such features are there 
+some menu bars coming this kind of things can be using java script in a very simple way so we would be seeing that how you can use java script to to make your web pages more attractive 
+
+and we cannot leave out java from the internet because java was a language which was primarily designed to be used in the internet in fact there are many applications in the internet which use java and we will see that means what are the advantage java offers 
+java programs which are used in the internet are called java applets so we would be looking at java applets and also we would be looking at 
+how using java we can communicate between two machines which are called client server programming 
+
+in module ten we would be talking about internet security because security is very important in the internet context today 
+so we would be talking about intranet extranet firewall how we can make on network um secure 
+we would talking about the basic cryptographic concepts in the next three lectures there we will basically talk about authentication we would be talking about encryption decryption and a number of related issues 
+um you want to develop a internet application how to make it safe and secure there are number of issues involved 
+
+in module eleven we will be talking about some miscellaneous applications ecommerce real time application IP telephony web crawler search engines and some other miscellaneous application topics 
+
+and finally in the last module we would be looking at some of the case studies well here we would try to look into the detail design for this for example we can look at web based mail 
+we can look at the design of proxy server and in the last lecture we will give you a flavor that how an internet applications can connect to a backend database 
+well all though this falls under the preview of information system design but there are may internet application which infer which in fact rely on some data stored in a database 
+so we will see that all the front end we are using the browser back end on the server side there can be database 
+how we can extract data from the database and develop an application from there so with this we come to the end of out intro introductory lecture today thank you 

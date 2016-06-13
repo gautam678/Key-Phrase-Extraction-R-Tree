@@ -1,0 +1,572 @@
+Hi. 
+In this course on numerical methods and programming, we will cover some of the basic aspects of both programming and algorithms.
+ We will learn, in this course, how to convert some of your ideas into calculations on your computer using some standard algorithms, and probably also learn how to design algorithms towards the end of the course. 
+
+Before we actually go into the algorithms, we need to know how to implement that on a computer. That is, we need to know some elements of the programming.
+ So the first part of the course will cover that.
+ The basic structure of the course is as follows.
+ We would first look at, 
+this course has three parts (structured into three main parts).
+ Each has its subdivisions,
+ so the first part is just elements of C programing.
+ You will only see about C programs.
+ There are many other languages like FORTRAN, etcetera, but we would concentrate only on C, C language.
+ And the second part of the course is numerical arithmetic and error analysis.
+ That’s what the second part of the course would be. And the third part of the course would be some of the algorithms and its implementation.
+ So we have basically three different parts.
+ The first part would be C programming. 
+So, you would have learnt by the end of the first part, that, at the end of the first part, you would have learnt how to implement an algorithm.
+So we will first go through very basic features of C programing. 
+We will not go through most of the complicated and deeper aspects of C programming, but some of the basic features of C programing. And then you would go through the concept of numbers on a computer, and what are the errors they can come, how the error can propagate, and what is the care one has to take when one is actually writing a code, etcetera. And the third part would be just the implementation of the algorithm and some of the algorithms. So,
+                                                                                                                                        
+let’s start by looking at how do we create a C program.
+ There are basically three steps involved in converting your idea into what is to be done to a working program.
+ So, that is, first you have to create a source code in the form of some text file which is acceptable to a computer,
+using one of the editors. You would type in this source code, and then you have to invoke a compiler.
+ In this case, you would use a C compiler.
+ There are many C compilers.
+ You would use the C compiler to process the C code and make it into an object file.
+ You could have many different parts of the code into different files.
+ We will go through all those details soon, and those will be all compiled separately or together to form object files, and then you would link all these object files together with other libraries and header files, etcetera, to form what is known as an executable, 
+
+
+and it is an executable which we run on a computer. 
+So that’s the basic aspect, that is, basic three steps involved in running a code.
+ So I summarize that in form of a flow chart, here.                                                                                                                                                                                                        
+
+ First we have a source code, and then we would invoke a compiler, and then produce an object file that creates an object code, and then we would use a linker to link this object code with other object codes and also with other libraries – function libraries – and then we would get an executable. 
+So I guess that’s clear.
+ So this is what we would do to run a program .
+So the tradition is to use, to create, this source code with an extension, “.c”, when we are using a C program. It’s not necessary, but that’s a traditon. 
+So we will always write a file name as with “.c”.
+ For example, if you want to quickly create my file, “myfile.c” is an example of a C program file, and the compilation and linking steps, can be, as I said, you first compile and you would produce an object code, and then you link it, okay, or you could have both of them combined into one step.
+We will see that in the later part of the course. 
+
+So let’s look at a C program that uses a library and another function as an example. The best way to learn programing is through examples. 
+So we would just look at an example of a C program.
+
+ Here is a simple C code.
+ So it has different parts.
+ We can see there are some “include” files here, 
+they are called the header files, and then you have the main part of the program here.
+ And this program is basically computing the square root of a variable, x, and it is printing it out, and then it’s calling a function.
+ It has some basic features of a complete C program. 
+It has a main part, and it does some computation here, and then it calls another function. So that’s what this program is. 
+
+So, what is this function?
+ This function is in this form.
+ So here is a function which I call “print.c”, and that function simply prints this program. 
+
+So that’s what this function is going to print. 
+We will just see this program, and see how it can be compiled, and how it can be run, etcetera. 
+This is “sample.c”. 
+So here is the program.
+
+So it has that “include” files, and the “stdio.h” and “math.h”.
+ Here I am not computing the square root of x,
+ I am computing tan hyperbolic of x, and it writes, instead of writing it into the screen, it writes it into a file called “sample.dat”.
+ This is little more complicated than the simple code I showed.
+ It opens a file called “sample.dat”, and then 
+it prints it into that file, and then closes the file. 
+That’s what it does, and again, it calls this function.
+ So now the question is, how do we compile this?
+ There are two ways of compiling this.
+ As I said here that you can first compile the programs separately to produce object files, 
+that’s what we will do. So we will say “cc –c sample.c”.
+ So, that would create, so it would create a file called “sample.o”, and we would say “cc –c print.c”, 
+so that would create a file called “print.o”.
+ So, we compiled this “print.c” and we got a file called “print.o”. And then we would now put them together and produce an exectutable, and in the process, we also link it to a library called –lm. 
+
+So we link it to a math library by using this command, and we say –o which means the output file and that goes into this “a.out”. 
+You can put any name here, like I could put “myfile” here and you will get an executable “myfile”.
+ So we’ll do that.
+ So we can say cc sample.c. sample.o sorry, print.o –lm –o a.out. 
+so that would create this file called “a.out”. 
+“a.out” is the file which has been created by this compilation.
+ So you could also do this in one step.
+ I will show you.
+ I will remove this “a.out”, and I could say cc sample.c print.c –lm –o a.out, and then you can see that it has created “a.out”. 
+To run the program, I would just say ./a.out. 
+
+so it is printed on the screen,
+ the print program is over,
+ that is because I had given in the print.c. 
+So remember, the print.c is just printing “the program is over”.
+ So what does this program do?
+ It has actually computed tan hyperbolic x for all values of x, and it wrote it into a file called “sample.dat”, and then it called this function “print in it”, print it,  and the “print it” is just basically printing it out “this program is over”.
+ That’s all it is, yeah?
+ So that’s what we did, and we saw the two ways we can compile it.
+ Wwe can actually compile it by invoking –c command which will only produce, only do the compilation, and if you don’t use this –c and then it would compile and link.
+ So, both will be done together here.
+ For example, here we are not linking it,
+ that’s why we don’t have to use –lm command.
+ Here we are linking
+so we are using –lm command because we are linking to a math library.
+ So let’s see what happens if we don’t link it.
+
+so let’s say I don’t like linking this program with another library,
+ so I just do this.
+ So then it says it cannot understand tan hyperbolic.
+
+so the tan hyperbolic function is built into a library, math library,
+ so we need this math library to compile this program.
+ So for many of those mathematical functions we need this math library.
+ So for some other functions you might need some other libraries,
+ so you would use those libraries or give the –l command.
+ So these libraries are all stored in a different path of the computer,
+ so it will be stored in a region called, for example, in a Linux platform it will be stored in /users/lib.
+ So it could be in a different program.
+ In a different operating system it will be in different place.
+ So all these libraries are stored there and we are just linking them to that library.
+
+ So we need to use –lm command if you are using math functions.
+ So similarly, we saw in this program that we are using these header files.
+ so what is the use of these header files?
+ We can see that by just removing this header file,
+
+ let’s say we remove the stdio.h, and then try to compile now with –lm. Of course, so then it says it cannot understand these things – file, fp, etcetera.
+ So all that definitions, that is, we say this “file” statement, and the “open” statement,  all the statements are actually put into the stdio.h file.
+ So that’s required if you want to use these statements,
+ of course, for the simple “printf” statement you don’t need it.
+ In some of the compilers, all these statements are actually built into the compiler, 
+so we don’t need a separate header file, but it’s a good practice to put this in here because some compilers need it and some compilers don’t need it. 
+So if you want your program to be kind of compiler independent as much as possible then you put this into the program. 
+So that’s the basic idea of how you create a program and how do you compile it and how do you run it. 
+
+so we saw that we have this very simple code, and with another function we compiled that and we could run it. 
+So that’s what it is. 
+So as I said, in this linking command, to summarize what I said, in this linking command we use the library, an archive, a math archive called m.a,  
+that’s what we did.
+ So, we also saw what is the need of this header file, and what is the need of this –lm command in this thing. 
+ So now, let’s look at the anatomy of a program.
+ To summarize this,
+ we had some compiler preprocessor commands, and that’s what I said, all these “include” files here, and then you had a main function,
+ some name, you can give some name to this main function, and then you had some variable declaration, and then you have the code, the main code, and then you could have sub-functions. 
+In the previous example, I had put the sub-function separately.
+ You can also include it into the main code. 
+In one file, in the main file, in one file, you could have the main program or the main function I call, and the sub-functions, or you could have them separately.
+
+Again, it’s a good idea to have the sub-function separately, and you compile them separately, and then you link them together.
+ That is always a better idea.
+ I will tell you why later.
+ It’s always safer to do that, to have the sub-function separately, and then do that
+for such small programs as the one I am going to show here. It may not be important, but for big programs it’s always good to have sub-functions separately and compile separately.
+ In the sub-function, it has the same structure.
+ It might have some arguments which you pass into it, and then you have the argument declarations here, and then you have the variable declarations which are private to the sub-function, and then you have the main code of the sub-function. 
+We will see examples of this, how we do this.
+
+So, before that, let’s go through each one of these in little more detail. 
+For example, let’s see what a compiler preprocessor does. 
+
+As I said, the compiler preprocessor basically handles the first part of the program, that is, stdio.h, math.h, and all these header files, are actually handled by the compiler preprocessor, everything with an “include” command. And then the second filter of the compiler. As I said here, the compiler has about three or four filters.
+ The first filter is the preprocessor which handled that, and the second filter actually checks the code.
+ It checks all the codes, symbols, statements. All things are checked by the second filter. The third generates the code, a code which is understandable to the machine.  And there can be a fourth filter which actually does the optimization which improves the code.
+ It actually modifies the code and it improves the code such that it will run faster. 
+That is about these four filters. 
+The fourth one need not be there,
+ it depends on whether you invoke it or not.
+ So, that is the four parts into the code.
+ So, let’s look at … that’s the basic compiler preprocessor you looked at.
+ Now let’s look at the variable declarations.
+ What is meant by the variable declaration?
+ We have seen in this code.
+ We have said that float x y.
+ These are the only variable declarations. Are these are the only type of variable declaration if you can make? No.
+ There are many types of variable declarations.
+ In general, it has this form,
+ that is, it has a class, and it [???18:34] a type, and then it needs a name.
+ It could also have an initial value given to it.
+ So the C language, unlike other languages, requires all variables to be declared before you start the program. 
+All variables have to be declared, which is good or bad, depending upon what your use is.
+
+ So everything has to be declared. 
+
+And the declaration is of this form,
+ that is, class, type, name, and an initial value.
+ The initial value is not compulsory.
+ For example, here I give an example.
+ “Auto” is a class, “float” is a type, and then you have “trial” as a name.
+ So you could declare it as “auto float trial” is equal to 0.0, or simply “auto float trial”.
+ Both are possible.
+ Now what happens is, “auto”, we will see that in the next slide.
+ It has more details about the class.
+
+So “auto” variable is actually a default.
+ If you say “float”, it is taken as “auto” automatic.
+ So, that is a default variable declaration. 
+Let’s look at some of these examples here.
+
+here I have declared a similar program as the one before,
+ so here are the header files, etcetera. And then there is a main function here, and we also have the sub-function here, and I have declared the variables “float x y”. 
+No initial value is given.
+ This actually means “auto float x”.
+ If you have to declare more than one variable in one line you may just separate them by a coma.
+ So you can have any number of variables put in here.
+ I have done two here, and in the C program all lines are separated by a semi colon.
+ So, here is a declaration of the “auto” variable. 
+This variable declared as “auto” variable is private to this function. 
+Unless you make an effort to pass it to something else it will not go out of this function.
+ You could have the same variable declared in another function.
+ Here is a sub-function I have declared.
+
+For example, “float y”.
+ The y value it takes inside this is different from the y value it takes from this unless you have passed it back, and in this function we are actually doing that.
+ So here is an example of the use of an auto variable in which you declare the function. Here
+ the x value takes, starting from 0, in steps of 1, it increases the value.
+ It is a floating point variable.
+ Now, what is a floating point, and what is an integer, etcetera?
+ We will see in the later class when we talk about arithmetic; how is a floating point actually stored in the computer; 
+how is an integer actually stored in the computer.
+ We will see that later. 
+Right now, we say floating point is a real number, and it’s an integer. That’s what we have – two different types – and we will go through that later, a little later again.
+ So here is a floating point, and that takes the value 01.02.0 etcetera here, and this function actually computes the cube of that,
+ so it finds the cube of the variable, and returns it to this function, and this spreads it.
+ It also uses a builtin math function called power. 
+It finds the second power of the variable x, and I have here made a program to compute the cube.
+ So if you actually execute the program you will get the square and the cube, both,
+ So we will see that here.
+
+ So we say cc sample1.c –lm again we need to do and –o a.out, or I could call it something else. a.out I call, 
+So if I do that, it prints out the number x value and its square and its cube.
+
+Now, when I pass this variable, this function actually calls it,
+ when I call this function I pass the variable x.
+ So I said that in the beginning, that when you have sub-function, you have to declare variable declaration of the variable which is being passed on to that function, 
+that has to be done here. 
+Suppose we don’t do that.
+ Let’s say we don’t have this, 
+then what happens? 
+So if you don’t do that do we get the same answer?
+ So we compile that again, and we run that, and we get 0.
+ So basically, it doesn’t know what the value of x is because we have not passed it.
+ So it has to be passed. 
+When you have a sub-function this auto variable has to be declared inside that sub-function separately. 
+That is, the auto variable’s use.
+ Then you can have external variables.
+
+External variables are common to the whole program.
+ So, you have many sub-functions and functions, and you want a variable to be shared by all these programs, all these functions,
+ then you could declare that as external,
+ then it will be shared,
+ then you have to tell the sub-function that this variable is declared external,
+ otherwise it will not know.
+ So that, we will see that with another example. 
+That is the best way to look at this. 
+
+ So here is a function which uses the external variable, and 
+this is the main program.
+Now, I have declared “float z”. 
+This is again a floating point, the
+ z is declared as a floating point, and I have declared it outside the main function. 
+That’s is where you display the external variables,
+ you declare them outside.
+ You don’t have to say external, you
+ just declare the variable which you want to use outside that function, outside the main program.
+ Now this program actually calls,
+ so I have declared that inside here as external float set because its main function is going to use this thing,
+ so I have declared that variable as external in the main function.
+ Now there is another sub-function here which this program calls, and that is called add(x) some other function called add.
+ So that function which I would show you here has also been using the variable x,
+ variable z, so I would say external float z inside that function.
+ I have to say this.
+ If I don’t say this this function will not know what z is.
+ It is an external variable, and it shares that value with it.
+ So if the z value is changed here, in this function, it will also get changed in this sub-function.
+
+ Now if you want to compile this function: cc sample3.c
+I am not creating the object file,
+ I will just do everything together.
+ So it creates,
+ it runs this program.
+ So let’s see what happens if I remove this here.
+ So I don’t have the declaration here, and then it doesn’t understand what that is.
+ We could change the value of the function here.
+ What we could do is, we could give it a value here, say, z equal to 6.0,
+then we save it, and we declare that here.
+ Then we will see that what value it gets now would be different, because we have changed it in the main program itself and it has been shared with this sub-program here.
+ C program is case-sensitive,
+ so you have to be careful with that. 
+I am printing out something different. I should print out inside this program.
+ I will make a “printf” statement here. 
+It’s just to see that when we change it in the main program it also gets changed here.  So it prints out “6” here.
+ Because in the main program we change it, it changes here also. 
+That’s what we wanted to see.
+
+So that’s the external variable.
+ Then you can have what is called, this is again the summary of how we use external variable. 
+
+So we declared it outside the main function, and any function which it uses it, will declare it external.
+ So that’s the external variable.
+ And then you could have the static variables. 
+
+Static variables are also very special definitions.
+ If you declare a variable as static inside a subprogram, now that variable is changed exactly once,
+ that is the first time it enters the subprogram.
+ That variable is changed.
+ After that it remains static.
+ We will see that again with another example. 
+
+So here is the function which uses the variable static (static variable).
+ I declare the variable here as y equal to 0 as static.
+ So that means it would initialize this variable the first time it enters this code, and after that it will not.
+ What happens if you run this?
+ We will run this. Cc sample2.c;
+ it prints 2, 4 and 6.
+ That’s what it is doing.
+ First time it enters it got 0, then it’s adding 2 to it, and then printing 2, 4 and 6.
+ Let’s see what happens if you don’t declare it as static.
+ Since it’s initialized every time it will just keep printing 2.
+ That’s what it will do.
+ That’s what we expect it to do.
+ So that’s what it does.
+ So that is a static variables do.
+ It is very useful to have this definition. There are many cases.
+ For example, in the case of random number generator you have some kind of a seed and use that seed to generate a random number, and the next time you call a random number it doesn’t want to again initialize the whole process, it wants to generate a new random number not the same random number.
+ So it wants to initialize it only once.
+ For the first time you call [???32:05].
+ For that kind of  function it is extremely useful to have something defined as static. 
+So we need this definition of static.
+
+ So we just now saw that we have auto variables, and we have external variables, and we have static variables.
+ I think that is the basic three classes which you need to look at.
+ So going back to our definition, we had the class, then we have type, and your name. 
+Name, we already saw, x, y, anything as a name.
+ We can put in many names, but we have to be careful as
+it is case sensitive.
+ In the C program, the variable names are case sensitive,
+ so use of a upper case and lower case letters are different, variable. 
+And initial value we saw that we can put the initial value, we may not put the initial value.
+ That also is up to the programmer.
+ The second thing is the type.
+ I already showed you some type here, for example, “float”, that is one type.
+ What are the main types of variables which we can declare?
+ So here is the summary or the chart of various data types.
+ You could have an integer, or we could have a floating point.
+ So that’s what we saw, a real number or an integer. Or we could have characters.
+ The characters are declared as “char”; integers are declared as “int”; and floating point as “float”.
+ Now, there are two different types of integers which we can declare. We can have long integers and short integers.
+ So now we saw that in most of the recent compilers, the present day compilers, when you declare an integer “int”, it is always a long integer.
+ So that means if you have a 32 bit computing, then you have 2 to the power of 32 is the largest integer which we can represent, unsigned integer.
+One bit is actually used for the sign.
+ So we can actually have 2 to the power 30 or 31 as size. 
+So we have the third type,
+that is actually the unsigned.
+ We can also use that bit which is reserved for a sign to represent a number
+, so that’s why unsigned.
+ So, unsigned can be little longer than the long integer. And then we have the floating point.
+ The floating point also has two types.
+ You could have the single precision or the double precision.
+ So when you say “float”, that’s a single precision.
+ Ane then you said double, that’s a double precision.
+ We will see the difference in a program; 
+
+that’s the best way to see it. Or you could have characters.
+You got 32 bit, or a double precision in the float point, and then you have characters.
+ That’s the basic data types which we will have. 
+
+let’s look at a program which uses all this data type.
+ So here it is. 
+
+Here we have double x and y,
+  have been declared as double. That’s the floating point double; auto variables. And then I have declared them as long integers.
+ As I said, in this, especially in the compiler which I have in this machine, whether I use integer or long integer it gives the same thing.
+ It may not be true in all machines.
+If you are using large numbers, it’s advisable to use it as long.
+ Long integers are also represented as just long,
+you don’t need to write “long int”.
+ These have been declared as integers. And then I have a character, which is the letter, it’s called a character. 
+So this has been declared as a character.
+ This is the name.
+ I have another character, which is a character array, or a character string.
+ For example, “a quick fox ”; that is a string which I call chain.
+ So these are examples of character declaration.
+ You can declare a single letter character,
+you can use any name.
+ I just use letter here. Or you could have said “chain”, or an “array”, or “a string of characters”. So in this program now I define letter as “b”.
+ Usually in single quotes, character is assigned.
+ So this letter which has been declared as a character has been assigned a character “b”. 
+
+ This integer “i” has been assigned a number 2, and then I am printing them out.
+ So this example also demonstrates how do you use print statement.
+ “printf” is actually print on the screen,
+as I have shown you in the previous example, you could open a file and use “sprintf”, that is, printing into a file.
+This example also demonstrates that we can print it on to a screen, and now here is the format of the print.
+ So if you are printing a double precision number, you use “lf”, or you could use “e”,
+you will see what the differences are.
+ For a long integer, you use “ld”, “percentage ld”.
+ That is what you need. And the C program, if you give wrong type here for the print,  it will print basically junk;
+it will not screen, but it will print junk
+in a C program. The characters are printed using a “percentage c”, and strings are printed using a “percentage s”.
+ That’s the format.
+ Now we will run this, and then 
+we will see what it prints.
+ The program continues. 
+
+It has a loop in which the j values increase from 0 to 31.
+ j value is initialized to 0, and it goes up by steps of 1 up to  31, and the x value
+the y value, which is equal to 1.01, to start with, it computes the square of that and assigns that value to y.
+ So basically, it keeps computing the square, that is 1.01 square, and square of 1.01 square, etcetera. 
+So we will see how long it can go before it blows up beyond the capability of the computer.
+ So what I want to show you is that this floating point, and these integers, there is a limit to the size of these numbers which the computer can handle, because it has a finite precision. That’s what we are going to see. 
+ so let’s look at that in this example.
+ Let’s compile this and run it.
+ So we will compile this again,
+ this time, sample 4.
+ Here I have not given any –o; 
+by default, it creates “a.out”. 
+If you want some other name then you have to give –o,
+otherwise it would always create “a.out”.
+ So, “./a.out”, now, this prints, you can see that it prints as the loop goes, but first it prints the number y, and the integer I, and the letter which I assigned is b, and the string “a quick fox”.
+it has printed all that.
+ Then it enters into this loop.
+ You remember, the first statement was to print all those, things that is, y I, and the letter, and the chain.
+ That’s printed; and then it goes into this loop and it’s printed every time.
+ Every time it squares it prints that.
+ So that’s the next part.
+The next part you can see,
+that is what it’s printing.
+It prints 1.02, and 2, and it squares that, and it keeps squaring it.
+ Here it takes the power 2 to the power of n, is what is being printed here.
+ You can see that it can go, this is being declared in double precision,
+so you can see that it goes all the way up to 16, and you can’t handle it anymore. By 17, by the 17th loop, it has gone into infinity.
+ As far as the computer is concerned, it’s infinity. 
+Infinity has been reached. And the integer continues to square power 2 to the power of n, it can go all the way up to 30. 
+
+Two to the power of 30 is the largest integer which it could print,
+it cannot do beyond that.
+ Then it gives junk.
+ This is a warning to C program users, that you have to be careful when you are using large numbers.
+ So, you get 2 to the power of 31, it’s not screening,
+it is not saying that it’s infinity,
+it’s not telling you that it’s not a number, nothing.
+ It’s just giving you a –2147483648.
+ Tthat makes no sense to you.
+ So that’s the thing.
+Let’s change this and then let’s make this just a float, that is, single precision, that is float.
+ Now let’s see what it gives.
+ We compile it again and we run it.
+ Now you see it couldn’t go beyond 13.
+ It went up to 16 last time,
+so beyond 13 it cannot go.
+ It’s already infinity.
+ So, if you want to use larger numbers, and if you also want to keep more precision, that is, the number of decimals you want to keep, number of digits you want to keep after the decimal, then you have to use floating,
+you have to use double.
+ That’s the two different data types of the floating point, and this integer types which I want to show.
+ Unfortunately, I cannot demonstrate the difference between short, long, and unsigned on this computer, at least on this compiler, 
+by default it uses long integer, and if you use any of this you will get 2 to the power of 30 as the largest integer which it can handle.
+ But that may not be true in other machines, in other compilers. 
+
+So, going back to the basic program, that’s the summary of the program which we have so far seen,
+we had again, say that we had “include” files, we saw the use of a main function and a subfunction, and then we saw how you declare variables, and how do you use print statements, etcetera.
+ So as I said, these are the header files which have been handled by the preprocessor, and here are the variable declarations, and now I want to tell you something more here.
+ This is a constant assignment.
+ We are assigning here a constant z equal to 2.0 by 3.0.
+ So now, z is a floating point.
+ So now for us, if you write z is equal to 2 by 3, or 2.0 by 3.0, it’s the same.
+ It’s a floating point,
+it’s a real number.
+ We know it’s point something, right,  .6 something, we know that,
+but for a computer, they are different.
+ If you write 2 by 3, and then if you take ratio of two integers, and then the computer assumes the result is an integer, or the nearest integer,
+ so if I declare z as 2 by 3 without .0 by 3.0, then you are going to get 0.
+ Just say z is a floating point, and it’s 2 by 3, then it’s 0 for the computer.
+ So you have to be careful.
+ You have to say 2.0 by 3.0, and that’s constant assignment, and we can also have, for example, here, this also,
+this is an assignment statement,
+you are assigning some value to y.
+ These are called assignment statements.
+ So that’s the basic summary of the code. 
+
+We will conclude today’s lecture by looking at this anatomy of a program once again,
+that is, here is the summary of the program.
+ First, we start with compiler preprocessor commands, which you might remember. It means that a standard C compiler has four filters and
+the command which take care of the first part is the preprocessor command which includes, which is actually the inclusion files, etcetera.
+ So we will look at that program again, and we will see once again what these things mean.
+ Then we have the main function with the function name given there, and the main function will have variable declarations and the main code. 
+
+when you could have many such subfunctions, or may not have any functions at all, subfunctions at all.
+ So let’s look at what’s meant by variable declaration.
+ In variable declarations, we would declare the variable with a class and a type and a name, and sometimes with an initial value also given.
+ This is not necessary,
+ but sometimes this also can be given.
+ So we look at all of this through a sample summary program that is shown here
+in this which I have made this program, which summarizes what all things which we have looked at now.
+
+First, here is the preprocessor commands which says that here include standard 
+“io” library and the math library, and then I have one declaration here of a variable,
+so we will look at what these declarations are one by one.
+ So here is the main program.
+ Sometimes, we do as we saw earlier. We have external variables. We declare the variables outside the function, and that’s shown here outside the main function, and if it’s not external then they are declared after the main program starts.
+ So here is the declaration of floating point variables x and y, with type, float, and class, auto; and then you have a integer variable declared.
+ Now I am using this external variable so, as you remember, as you may remember, that we have to declare them again here,
+so that is external type variable which is external class, and then “float” is the type, and z is the variable.
+ So “float” is declared outside the main function because it’s an external variable, and then we have functions, subfunctions here.
+ There are three subfunctions here.
+ They are called “cube”, “add” and “increment”.
+ Note that these subfunctions also have a type floating point variable, or floating type.  The reason for that is these subfunctions actually return something to the main program.
+ As you can see here, for example, the cube, this subfunction, this cube actually returns the variable y which is of the type “float”,
+so the function itself has to be declared of that type.       	
+ 
+So that’s the floating point subfunction calls, and then here is another declaration,
+so this is declaration of the subfunctions, and the declaration of the variables, the auto class, the external class, and then here you have the declaration of a file pointer “fp”, and then after the declaration you have the first assignment statement which is “fp” is now a file pointer, is now used to open a file called “sample.dat”, and here is an assignment which gives x as value 0.0.
+ So now, as I said earlier, remember that you could also use this initialization. You could also do it here.
+ You could say float x equal to 0.0 to initialize 
+
+Then this program has a small loop here in which you compute tan hyperbolic of the variable x.
+ So that is the assignment statement here.
+ y which is declared as the floating point is now assigned to tan hyperbolic of x.
+ x is another floating point,
+so tan hyperbolic is now here a function.
+ Now this function is not declared anywhere here because it’s part of the standard math library, and that’s what we have used here using “math.h”.
+ It is part of the standard math library.
+now this demonstrates the use of the function from the math library and here is a way of using, once we calculated this,
+here is the method to actually write it on to a file,
+so I use “fprintf” to write it into a file “fp”, and in that “fp”, apart from some comments which says module 1, that is this part of the program which is writing this, and then there are the two floating points which is now commented by percentage f and percentage f.
+ So, that is to say that that is floating point which you are writing and that is x and y and then we close that file “fp”. 
+
+Now here is another function which I call, this is another function which doesn’t return anything.
+ It is actually void.
+ So if I actually declare it here, I should declare it as void, but many of the compilers you don’t have to declare it, but many of the older compilers you will have to say “void”,
+for example, here you will have to say “void”;
+you have to say here “void printinit”.
+ That’s the correct way of doing it,
+but many of the compilers assume if you don’t declare it that it is indeed a void function.
+ So here is another loop.
+ Now this is a way of calling a function which is now this loop again, similar to the earlier one, this loop,
+but here now we are calling this function cube of x, and that is something which returns, and that returns a value, a floating point, and that floating point is assigned to this.
+ This program now simply prints it out on the screen.
+ You have to note that I am using “printf” instead of “fprintf”.
+ So if I run this program, it will simply print this on the screen.
+ We can see that here,
+if I run this program. So I have this program compiled.
+ So if I run this, when this program runs, it just prints it on the screen.
+ This is the module to printing the variable 5, that is, the x value, the square of that, and the cube of that, and that is what this part of the program module 2 is actually printing, right,
+it is printing the x variable which is 5, because it went up to 4 here and starts from here at 5, and then it prints out 5 and power 2.
+ Now this is again, a function which is part of the math library.
+ So it’s power x square, it can compute x square power x 2. It’s part of the math library, and it’s again to show you that you don’t need to declare something like this here and then put it into the print statement.
+ You can also put the assignment statement straight into the print statement if all you need to do is simply print it, and then here y is the cube of x.
+ I could have simply put cube of x here to print it out also; and then here is another program which is called add of x, which is again part of the subfunction it calls starting from x equal to 0.
+ Initialize x equal to 0 again here, and I pass it into this y to add of x and to return something, and that’s printed as y, 
+
+ and I print that out x and y here.
+ So you remember I am putting it here as x equal to 0, and then I pass it here and it returns something.
+ So, what does it return? 
+If you look at this you will see that add of x, actually what it does is it takes the value x and it adds that x and y together.
+ y is now initialized here to 0.
+ It increments y by 2 and then adds that to x.
+ Remember x is equal to 0 which is passed,
+so it’s x plus y is what is going to be returned.
+So, y here is a static variable,
+so the next time when it’s called it’s not initialized.
+ So this program is just to demonstrate the static variable.
+ This variable y is only initialized once.
+ We can see that again when we run this code here,
+this is part of the module 3.
+ You see we are passing x all the time as 0.
+ x is always passed as 0, but what it returns is 2, 4, 6.
+ If you look at module 3, you will find that x is always passed as 0 here, but what it returns is 2, and then 4 and then 6.
+ So the reason for that is only in the first call, the y here is initialized.
+ The next time even though we have written y is equal to 0, that is initialized only the first time it’s called to that function, and the next time it’s called, it’s incremented by 2, and z here goes from x plus y but x is always 0 because it’s passed as 0 here. So z goes as 0, 2, 4,, etcetera.
+ That is what it’s demonstrating.
+ So that shows us how to use floating point variable, sorry auto variables, and also external variables like this, and also how to use static variables.
+ We will continue on this programming in the next class.   

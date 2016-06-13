@@ -1,0 +1,300 @@
+TRANSCRIPTOR: V.Srinivasa Rajkumar
+
+Educational Technology I.I.T.Delhi 
+presents
+
+A Video Course on Programming Languages
+by
+Dr.S.Arun Kumar 
+Deptt . of Comp.Sc. & Engg.
+I.I.T. Delhi 
+
+Lecture 3
+Grammars
+
+so welcome to the third lecture so today we will continue with we just started on grammar on last lecture so we will continue it and go in some detail 
+so let [00:57] me just briefly summarize what we did in the last lecture so as a set a grammar is a four tuple consisting of um a finite a set of non terminal symbols or grammatical categories if you like um
+
+
+
+a finite set of terminal symbols which usually constitutes the vocabulary of programming language um 
+a finite collection of formation rules or productions which are really rules of replacement and a start symbol which really signifies the grammatical category called a sentence of the language of a language yeah 
+so um so we went through the um we went through one simple um grammar for example for um for the generation of Boolean expression alright we have this various syntactic categories here 
+so we have the set of non terminals or the grammatical categories consists of the essentially the and expressions 
+the V stands for or expressions the C stand for conditional exp um complement expressions and there is a start symbol 
+the terminal set consists of open and close parenthesis and the connectives and not and or i will normally while we are dealing with grammars i will use the color black for terminal symbols and since the grammatical categories are a level of abstraction higher i will use green um light green for some things and dark green for some other things ok
+
+so this [02:57] was the grammar we had we also saw how a sentence which is a string of terminal symbols can be generated from this grammar by applying the rules of um 
+
+
+
+the production rules right so in each of these cases i have circled in orange the non terminal symbol which i am replacing and by um and of course i have several choices for replacing S and i could choose one of the them all right 
+so if you choose different choices then you will get a large number of other sentences you will generate a large number of other sentences in fact since there is absolutely no restriction on how long you can keep getting S in this in the case of this grammar you actually can generate an infinite set of sentences right
+so as you can see in a grammar is a finitary representation of an infinite set a large part of computer science mathematics and logic really has to do with how to represent infintary object in a finite manner and this is one such example yeah 
+
+so as [04:20] i said the some of the warnings and cautions that you must keep in mind or that this set of non terminals and the set of terminal symbols should be disjoint and we 
+have got the production set is really a binary relation from non terminal symbols to strings of  non terminal and terminal terminal symbols right 
+so the replacement rule allows you take choose any non terminal symbol and replace it by a string consisting of terminal and non terminal symbols yeah um
+
+
+
+there is a star here which is to denote that you can replace that this set is really the set of all possible finite strings that can be generated from this set N union T ok
+
+so i [05:28] will explain some of this so in general for any set A 
+
+
+
+A star is the set of all the strings of finite length in particular the finite length could be a length of zero ok
+so a zero length string is really nothing ok it is called the empty string and we usually use the greek letter epsilon to denote it yeah
+A plus is the set of all non empty strings generated from this um set of all non empty strings of this 
+there is only one string of zero length that is the empty string ok so it is the set of all non empty strings and A plus is equal to A star with epsilon removed from it 
+since there is only one zero length string you know so the particular kind of grammar that we have been considering um as an example is what is known as a context free grammar right
+
+so when [06:37] the production rules are such that you are allowed to replace a single the rules or such that on the left hand side of the arrow mark you have a single non terminal 
+
+
+
+symbol and on the right side you have some string of terminals and non terminals right
+that is called a context free grammar it is called context free as suppose to for example a context sensitive grammar right
+a context sensitive grammar has production rules in which given a certain string of terminals and non terminal symbols you are allowed to replace them by some other um you are allowed to replace the non terminal symbols by some more by some other string of non terminals and terminal ok ok
+the meaning of  context free is that these production rules like it says so let us take a context let us take our example and um obtain 
+
+so for [07:59] example in this let us take a arbitrary string in this example and we have so we are replacing this S 
+let us let us assume we are choosing this arbitrary string so this S appears in a context and the rest of this is the context ok
+
+
+
+
+similarly this S here for example appears in this context ok and we are saying and we are calling this grammar context free because we are allowing this replacement of S by a string of non terminals and terminals regardless of what context that S appears with ok
+so this is the context in which this S appears and we have a uniform rule the production rule says that uniform in the sense that regardless of what contexts the non terminal appears in
+you are allowed to do a replacement ok as suppose to what might be called context sensitive 
+
+in a [09:13] context sensitive grammar you could for example specify that a certain non terminal can be replaced by a string only if it appears in a particular kind of context ok
+in particular you might define that context to be an empty context ok
+so in general a context a context sensitive grammar is really more general than a context free grammar ok
+you might look upon every context free grammar production as specifying a context which consists of  the empty string ok ok 
+anyway we will go into that a little later but let us first worry about some simpler grammars also yeah 
+
+
+
+so [noise] so if if it follows these rules in its context free 
+
+let us [10:23] look at languages
+
+
+
+the language generated by any grammar is a set of all possible sentences that may be generated from the start symbol 
+for example if you take the start symbol located in some context and generate a string that string may not be in the language at all unless that context it self could have been generated from the start symbol yeah
+
+
+so so [10:58] the um so this is what we would call a language and in general we would call it a language on the set of terminal symbols and a language on set of terminal 
+
+
+
+symbols is a possibly infinite set of strings from the terminal set that we are saying that any subset of  T star is a language um and for example here are some trivial languages that you can define on any set T 
+you have the empty set for strings which is the empty language you have this language consisting of a single element the empty string ok 
+you have T star itself is a language and T plus itself is a language and in between you have a whole lot of other languages 
+so you might regard this T plus and T star as two extreme as one extreme and these the empty language and the language containing the empty string has the other extreme and you can have lots of subsets in between ok
+so and they are all languages the problem is that when you have a programming language you have a infinite set of possible programs and the problem is of defining exactly what grammar can generate that language right
+so um so we will say that so just as we have defined um grammars we will also define languages in a similar fashion 
+
+but first [12:47] let us go into a particular into a into some particular kinds of  grammars called regular grammars ok
+so in a regular grammar every production is of this form supposing you take a grammar in which every production is of this form where this capital A denotes a non terminal symbol 
+this capital B denotes a non terminal symbol and this small a denotes a terminal symbol in fact i should have made it black but any way um right 
+so if every production is of this form then we call this a right linear regular grammar ok the first thing to realize is that a right linear regular grammar is also a context free grammar
+
+
+
+there is really no difference ok 
+a context free grammar allows productions which are not for example a right linear regular grammar means that on the right hand side you should have just one non terminal symbol and one terminal symbol appearing in this order the terminal symbol is followed by the non terminal symbol 
+in a context free grammar we do not have that restriction for example we had um S goes to in a context free grammar 
+
+for example [14:30] if you take this any of this rules they are not they are not at all regular ok they are not right linear or regular 
+
+
+
+
+and of [17:58] course you might also allow you would also allow just a terminal to be generated right
+
+
+
+right so after all you have to generate strings of the language form the terminal set if you always had only non terminal if you always had non terminal symbols appearing on the right hand side then you will be never be able to generate a full sentence of the language 
+so a right linear regular grammar is one all of whose productions are of this form 
+similarly you might define a left linear regular grammar as one in which all the productions are of this form yeah and of course it has this terminal generation rule too yeah
+so every production is either of this form or of this form then you would say it is a left linear regular grammar right 
+so let me right that out for completion all right so so such a grammar is called a left linear grammar and if you have done some hardware 
+if you have defined for example designed some hard ware using finite state machines it turns out that you can actually 
+all right linear grammars actually represents finite state machines you know machines without output 
+i am talking of those kinds of machines right so in fact you can represent all you can take the state transition diagram of the machine and refer to each state as a non terminal symbol and refer to the input symbol 
+the input into that state has a terminal symbol so a finite state machine automatically defines a right linear grammar yeah
+so most finite state machines have a start symbol the start symbol is the start state right um so the
+what we are talking about is really quite a powerful language and let us 
+
+if you [18:40] suma let us summarize what we have looked at the general properties of grammars are that firstly every regular grammar whether right linear or left linear 
+
+
+
+every regular grammar is also context free every context free grammar is also context sensitive 
+in particular all the productions of the context free grammar can be considered in the context of empty strings on both sides of the non terminal symbol [18:40]
+
+so so [18:42] in general we can look upon any string for example if you were to take a string like this if you were to take one of these strings i can think of this any of these strings as 
+
+
+
+let us take the top most string right 
+i can take any of these strings as having a not symbol then an empty string symbol then a open bracket then an empty string and then an empty um and then A and an empty string and a close bracket ok
+so you can look upon every context free production as being padded appearing in a context which contains empty string and the empty string implicitly appears everywhere between terminal symbols between terminal and non terminal symbols yeah 
+so so it is for that reason every context free grammar is also context sensitive and what also is true is that 
+
+every right linear regular grammar um so if you so our interest in grammars is ultimately in generating languages 
+so you take any language supposing that language can be generated by a right linear grammar then it is also possible to define a left linear grammar which will generate the same one the language 
+similarly if you were to take any language generated by a left linear grammar left linear regular grammar then the same language can be generated by a right linear one yeah
+[student : um grammar is also context sensitive]
+sure ok
+so what we have as a general kind of production let me just rewrite that 
+so let us look at let us look at the set T star yeah 
+so the set T star for any set of terminal symbols ok is just the set of all strings obtained by this terminal symbol ok obtained form T um 
+
+
+
+in particular i can look upon T star as consisting of the empty string ok 
+the set of all strings of length one which is the set T itself 
+the set of strings of length two which is like T cross T the set of strings of length three and so on and so forth right 
+so T star is really the set which is obtained as the union of cartesian products Tn where n is greater than or equal to zero right
+now what i can do is i can define a binary operation called catenation ok 
+the effect of catenation is to take one string is to take two strings and put them together ok 
+for simplicity let us assume that the set T consists of just two symbols ok so let us just call those two symbols a and b right 
+so i can take a string in T star let us let us take a let us take a string in the set so let us say ababb let me take another string let us say bab 
+the operation of catenation ok which i will denote by just a dot for the moment is just to produce the string ababbbab fine 
+so this so this is equal to just so the operation of catenation just juxtapose the two strings the two strings 
+it is a binary operation on strings it just puts the two strings together and gives you a new string 
+so for example this string this string is of length five so this belongs to the set T five um T raised to five this string is of length three 
+this belongs to the set T cube and this string um has a length eight and it belongs to the set T raised to eight and of course all these sets are subsets of T star and so catenation is really an operation from T star cross T star to T star right 
+so it has a functionality which is to take two strings of finite length and juxtapose it yeah [25:30]
+
+so supposing [28:48] you consider the empty string ok what happens when you take a string and juxtapose an empty string to it 
+
+
+
+you get back the same string what happens if you take the empty string and to it you juxtapose some other string you get back the other string 
+so the empty string satisfies these conditions that for any um for any for any string in T star for any S belonging to T star 
+S concatenated with the empty string equals S and the empty string concatenated with S also gives you S
+so the empty string is a very often catenation is juxtaposition operation we just get rid of the dot symbol ok but you could have a dot in between right 
+now what you are saying ok so now one obvious property now is that this epsilon is in fact the identity element for catenation it is like a zero for addition right
+secondly catenation is associative in the sense that if i take three strings s t and u and i catenate them i can catenate them in any order ok 
+so the set the set T star under catenation and 	under catenation and with the empty string is really a monoid because this operation is associative 
+so catenation is associative and it has a identity element however it is not communicative so it is not an ebleion monoid it is just a monoid yeah
+now what do we mean by a context sensitiveness so if you have a production let us take a production 
+let us take a production of an arbitrary context sensitive grammar ok so let us keep this here so that we might we might in fact need it for some reason [28:48]
+
+so if you were take a production of a context sensitive grammar what it specifies is that i have a non terminal symbol A and if it appears in some context ok
+let us say ok then i can replace this non terminal symbol by some some other string so which means that the context still is going to be preserved ok 
+
+
+
+but this a is going to be replaced so it is a conditional rewriting i can replace a by um let us say um let us say some some um some B um C and may be some xyz 
+some x and y padded with some i don’t know some x and y ok so what this production drew what this production says is that i can replace a by the string xBCy only if on both sides of the A i have small a and small b appearing otherwise i cannot do that ok
+in that sense this production is context sensitive it says that if supposing that there were some other symbols appearing  somewhere on two sides 
+so there is a large in the generation process there is some large string which was there there is a ok there is a arbitrary string and turns out that there are some other symbols which actually are around a um
+let us say yeah ok supposing so A here appears in a context which does not contain this which does not contain small a and small b on either side ok
+so then A appears in a context in which this rule cannot be applied ok what we are so a context specifies a certain minimal a minimal shell within which that thing should appear in the case of our context free grammar you are implicitly specifying that the context in which it should appear is epsilon on both sides ok
+so any of these strings ok in this case um in the case of our context free grammar [32:10]
+
+in the [37:10] case of our context free grammar we are implicitly specifying that if S appears in an empty context which means that you don’t care what appears on either side of S then i can replace S by A ok
+so a context really specifies the smallest kernel that you around that symbol which we should satisfy and here it is the small what we are saying is regardless what the string in the generation process is if it is of the form
+if it is of the form a um A b regardless of what else occurs in the string if if you can this A is a candidate for replacing by this rule ok
+
+
+
+
+context sensitive grammars are actually more general i mean in the sense that this padding of a and b also perhaps not necessary you might get rid of this a 
+small a and small b too ok but let us not worry about it the inclusive meaning of context sensitiveness is really um 
+what is you are specifying some minimal padding around that non terminal symbol which will enable a rule to applied and in the case of a context free grammar the minimal padding is nothing ok
+so all those rules can be thought of as rules in the context in which on both sides of the padding the minimal padding that you require is the empty string which means you don’t really care what the rest of the string is in the generation process regardless of what the rest of the string is you can apply the production yeah um
+actually it turns out that the context sensitive grammars or what are programming languages all are but there are practical reasons why we do not take their context sensitivity into account it is much simpler to deal with the programming language as a context free grammar as generated by a context free grammar and deal with a context sensitive aspects later on in the process of compilation ok 
+a typical context sensitive feature even in languages like pascal is that no variable can appear in a statement unless there is a declaration of that variable ok only then 
+if you had a context free if you had a if you have a context free grammar for pascal what it will do is it will fail to check on these context sensitive issues ok
+so undeclared variables can appear in your program in your um in your program if you just go by a context freeness 
+but there are but the practical reasons are that there are no efficient algorithms to recognize or pause context sensitive languages represented as context sensitive grammars we have efficient algorithms to recognize and pause context free grammars
+if you take context sensitive grammars then you are not likely to get a linear algorithm ever there are no linear algorithms available 
+linear time algorithms available for phrasing context sensitive grammars so what we do what is usually done by many people is to in specifying the language is to specify it as a context free grammar 
+so that and later as part of the semantics specify it’s context sensitive aspects many people in fact consider context sensitive to be synonymous with the semantics of the language but that is not quite true yeah right [37:10]
+
+so coming back to what we are saying um so every regular grammar is context free every context free grammar is context sensitive 
+every language generated by a right linear regular grammar can also be generated by a left linear regular one 
+every language generated by a left linear one can also be generated by a right linear one and  we can in fact go supposing you have a grammar which is regular but not necessarily right linear or left linear 
+what does that mean 
+it means that some of the rules might be right linear some of the rules may be left linear such grammars can also be always converted into either purely right linear ones or purely left linear ones yeah
+in fact that’s that conversion is what helps us to design machines for recognizing languages of this grammars yeah 
+
+[student: can you give an example for that ]
+
+well um it is not absolutely important now it is really a subject of the theory of computation course so we will we will just yeah 
+so when we are looking at languages um we would say that the language is regular if there exists a regular grammar which generates it 
+similarly a language is context free it there exists a context free grammar that generates it and a language is context sensitive if there exists a context sensitive grammar that generates it 
+it is possible that for some language you have generated a context free grammar it is context free but the language could still be regular yeah 
+so um similarly i mean it is possible that you generate you have written context sensitive grammar for a language which actually could be context free in the sense that if you work hard enough you might be able to come out with a grammar which is purely which is context free yeah 
+um let us just look at a few small examples of let us say regular languages yeah 
+
+so here [39:55] is take our Arabic numerals um um let us remember one thing it is one thing to design a grammar and then ask what is the language generated by the grammar 
+ok and another thing is to take in existing language and try to define a grammar for it and our were no long before any grammar was used for them 
+actually large number of numerals actually come from the notion of the grammar in natural language and um Sanskrit grammar for example was always a very neat um rigorous um art form if you like 
+so that is one of the one of the reasons perhaps that we have such a neat we have evolved such neat notation for numbers right
+so take the Arabic numerals the terminal set is the set of all possible digits that you have zero i am considering representation in decimal
+
+
+
+ 
+so zero to nine and i require just one non terminal symbol S ok and i have just these following productions 
+S goes on a S can be replaced on a digit followed by S again or S can be replaced by a digit ok
+so very nice and simple grammar right and this a right linear grammar and the corresponding let linear grammar which is equivalent to it is this 
+if you were to take roman numerals firstly it is not at all fully clear what the terminal set is in the sense that the romans never considered a things beyond a few tens of thousands 
+the romans had a pattern in the sense that a five every five um so they had five ten fifty hundred five hundred thousand 
+they had symbols for all of them and the assume that they had symbols also for ten thousand fifty thousand um hundred thousand five hundred thousand [noise]
+but then you would require if you continue that pattern then you would require an infinite set of terminal symbols ok
+supposing you did have the infinite set of terminal symbols which means your condition for being a grammar already is violated but supposing you could have a infinite set of terminal symbols then the way the numerals are written is that they were very very context sensitive 
+for example an x cannot precede a c um um for example i um x which is ten cannot precede v which is five 
+or rather i am sorry an x cannot precede let us say d which is five hundred ok
+so it is very context sensitive what can appear on the left of what and what can appear on the right of what ok
+in that sense the roman numerals is not as simple as this a regular language is implicitly a very simple object 
+it is easy to see what language it generates very often it is easy to construct a grammar for it yeah so  [noise] so
+that is and also so what we would say are that is that these two grammars are really equivalent after all remember that our ultimate aim is to represent languages some how in a finitary fashion 
+so what should be the criterion for saying that two grammars are equivalent they should have well let us say the same terminal set 
+they need not have the same non terminal set they need not have the same production set but the language they generate should be the same all right 
+so the language  that we have previewed for the context free language that we have previously given here is an equivalent context free grammar yeah so
+
+so for [45:24] example what i have done in this case is to just um take is to just factor out um the open parenthesis and the S and introduce a new non terminal symbol called B which 
+
+
+
+for which i have two rules so i have gotten rid of the non terminal symbols a and b and c i have gotten rid of because i directly wrote this but i could have had c if i had wanted right
+so let us let us quickly go through 
+can we just quickly see that grammar um 
+here is the grammar so here was here was the original grammar and here is the equivalent grammar in which what what we have done is 
+
+
+
+we have taken we have taken this the fact that there is a common occurrence of left parenthesis followed by S 
+we have factored that out into this ok an equivalent way of writing this grammar is to use a new symbol S 
+let us say S arrow D and let D produce this string yeah um this the elimination of the C was just well just to make a grammar smaller to reduce the number of non terminals 
+it is an important constraint it is a important thing to reduce the number of non terminal because you are parsing of the language really depends how many non terminal symbols there are ok
+so it is a good idea so which means that for the same language you might have variety of grammars it is a matter of decision making to choose the right kind of grammar right correct kind of grammar which generates that language 
+the and the criteria for choosing a grammar are there firstly the grammar should not be so complicated then it is impossible to parse the language preferably it should be a context free grammar
+keep the um keep the number of non terminals low and another important constraint which which we will not be able to appreciate now
+which we will come to later is that it should facilitate an easy explanation of the semantics of the language 
+in fact the Arabic numerals um the left linear and the right linear once they have that difference they both equivalent in terms of actual generation but the fact that 
+
+but the [48:27] fact of the matter is that it is easier to specify a semantics for the left linear one rather thatn the right linear one 
+
+
+
+now it is easier to specify a semantics for the right linear one rather than the left linear one and certain parsing algorithms actually will choose the right linear over the left linear because there is a interest inherent constraint in those parsing algorithms 
+you know um the inherent constraints has to with recursive calls ok
+so as you can see you know the recursive calls in this case will could lead to an infinite recursion whereas in this case they would lead to a finite recursion based on a look ahead we will we will look at that later um so so that’s um basically all that we have time for today thank you 
+
+
+
+
+
+
+
