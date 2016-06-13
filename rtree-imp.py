@@ -2,6 +2,7 @@ from rtree import index
 from data import Google as dataDict
 idx=index.Index()
 import matplotlib
+#following line added because shiva is working on a server machine with no GUI
 matplotlib.use("Agg")
 import numpy as np
 import matplotlib.pyplot as plt
