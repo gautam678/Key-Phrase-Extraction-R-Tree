@@ -9,8 +9,12 @@ def calc_dispersion(key, occurences):
 
 def main():
 
+    keyPropertiesList = []
+    means, stdDevs = [], []
     for key in testDict:
         mean, stdDev = calc_dispersion(key,testDict[key])
         if mean+stdDev is not 0:
-            print key,mean,stdDev
+            keyPropertiesList.append({"key":key,"mean":mean,"stdDev":stdDev,"numberOfOccurences":len(testDict[key])})
+    print keyPropertiesList
+
 main()
