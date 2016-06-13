@@ -76,23 +76,22 @@ def main():
         print keys
         X=[]
         Y=[]
-        ann=[]
+        annotations=[]
         nearestTermsHistogram = query_for_nearest_terms(idx,keyMap,keys,numOfNearest=10)
         print nearestTermsHistogram
         for x,y in nearestTermsHistogram:
             X.append(x)
-            ann.append(keyMap.keys()[x-1])
+            annotations.append(keyMap.keys()[x-1])
             Y.append(y)
-        print X
-        print Y
-        print ann
+        print annotations
         fig, ax = plt.subplots()
         ax.scatter(X, Y)
-        for i, txt in enumerate(ann):
+        for i, txt in enumerate(annotations):
             ax.annotate(txt, (X[i],Y[i]))
         print keyMap
         plt.show()
         print nearestTermsHistogram
+        plt.savefig("test.png")
         print "="*27
 
 main()
