@@ -1,4 +1,6 @@
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use("Agg")
 import glob
 import re
 import rtree_imp as rt
@@ -98,15 +100,21 @@ def search(inverted, query):
 
 #######################################################
 
-keys = glob.glob("keys\*")
-trans = glob.glob("transcript\*")
+user = "ubuntu"
+#user = "windows"
+if user is "windows":
+    keys = glob.glob("keys\*")
+    trans = glob.glob("transcript\*")
+if user in ["ubuntu","linux"]:
+    keys = glob.glob("keys/*")
+    trans = glob.glob("transcript/*")
 data={}
 data1={}
 points=[]
 
 #print keys
 print "********************",len(keys)
-for n in range(1,len(keys)):
+for n in range(len(keys)):
     f = open(keys[n])
     print keys[n]
     key =  f.read()
@@ -338,6 +346,8 @@ for n in range(1,len(keys)):
 
 
     k = raw_input("Press enter to terminate")
+#is the follwoing necessary?
     try:
         pass
-    except SyntaxError:
+    except Exception as e:
+        print e
