@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import glob
 import re
-
+import rtree_imp as rt
 
 """
 FUNCTIONS LIST
@@ -103,7 +103,6 @@ trans = glob.glob("transcript\*")
 data={}
 data1={}
 points=[]
-text_file = open("Output.py", "w")
 
 #print keys
 print "********************",len(keys)
@@ -329,19 +328,20 @@ for n in range(1,len(keys)):
         points.append(i[1])
 
     xtic=[]
-    print data
     for i,y in data.items():
         data1[str(i)]=y
+        
     name=str(keys[n])
     name=name.replace('keys\\','')
     name = re.sub('\.key$', '', name)
-    text_file.write(name+" = "+str(data1))
-    text_file.write("\n\n")
+    print name
+    print "***"*29
+    rt.dataDict=data1
+    rt.main()
 
 
     k = raw_input("Press enter to terminate")
     try:
         pass
     except SyntaxError:
-        pass
-text_file.close()   
+        pass 
