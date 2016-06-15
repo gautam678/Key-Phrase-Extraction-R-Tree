@@ -78,8 +78,8 @@ def inverted_index(text):
 
 def inverted_index_add(inverted, doc_id, doc_index):
     """
-    Add Invertd-Index doc_index of the document doc_id to the 
-    Multi-Document Inverted-Index (inverted), 
+    Add Invertd-Index doc_index of the document doc_id to the
+    Multi-Document Inverted-Index (inverted),
     using doc_id as document identifier.
         {word:{doc_id:[locations]}}
     """
@@ -145,8 +145,6 @@ for n in range(1,len(keys)):
     print _1gdict
     data.update(_1gdict)
     print "$$"*59
-    
-
 
     x=[]
     y=[]
@@ -162,7 +160,6 @@ for n in range(1,len(keys)):
     for i in range(min(x),max(x)):
         xtic.append(i)
     xtic.append(max(x))
-    
     temp=[]
     for i in range(0,len(y)):
         temp.append((x[i],y[i]))
@@ -182,7 +179,7 @@ for n in range(1,len(keys)):
                 Two_gram_dict[keey]=[occ]
             else:
                 Two_gram_dict[keey].append(occ)
-            
+
         else:
             pass
 
@@ -224,7 +221,7 @@ for n in range(1,len(keys)):
 
     ### WORKING WITH 3G DICT NOW AND CHOOSING A BETTER DICT NAME ###
     _3gdict = {}
-    
+
     print "3 - Grams"
     print "*************************************************************************************************************"
     for j in range((len(y)-2)):
@@ -238,7 +235,7 @@ for n in range(1,len(keys)):
                 _3gdict[keey]=[occ]
             else:
                 _3gdict[keey].append(occ)
-            
+
         else:
             pass
     print "3G::"
@@ -258,7 +255,7 @@ for n in range(1,len(keys)):
             New_IND3.append((L_temp,i))
         L_temp+=1
     print New_IND3
-            
+
 
     x3=[]
     y3=[]
@@ -277,7 +274,7 @@ for n in range(1,len(keys)):
     ### VOILA! YOU HAVE YOUR IND BACK WITH YOU ###
 
 
-    ### TO APPEND 4G KEYS ###  
+    ### TO APPEND 4G KEYS ###
     print "4 - Grams"
     print "*************************************************************************************************************"
     _4gdict = {}
@@ -291,7 +288,7 @@ for n in range(1,len(keys)):
                 _4gdict[keey]=[occ]
             else:
                 _4gdict[keey].append(occ)
-            
+
         else:
             pass
 
@@ -308,7 +305,7 @@ for n in range(1,len(keys)):
             New_IND4.append((L_temp,i))
         L_temp+=1
 
-            
+
 ##    IND = [i for i in New_IND]
     print "4G"
     data.update(_3gdict)
@@ -344,4 +341,4 @@ for n in range(1,len(keys)):
         pass
     except SyntaxError:
         pass
-text_file.close()   
+text_file.close()
