@@ -50,6 +50,7 @@ def __init__(self, name):
     self.name = []
 
 def main():
+    print "Entring main.."
     data,keyMap = indexWordOccurence()
     idx = createRTree(data)
     for keys in dataDict:
@@ -71,7 +72,7 @@ def main():
             ax.annotate(txt, (X[i],Y[i]))
         print keyMap
         plt.show()
-        print nearestTermsHistogram
+        print "NH:",nearestTermsHistogram
         print "="*27
         break
 #print dataDict.keys()

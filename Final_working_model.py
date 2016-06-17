@@ -344,10 +344,4 @@ for n in range(len(keys)):
     rt.dataDict=data1
     rt.main()
 
-
     k = raw_input("Press enter to terminate")
-#is the follwoing necessary?
-    try:
-        pass
-    except Exception as e:
-        print e
