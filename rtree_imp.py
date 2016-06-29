@@ -21,13 +21,12 @@ def createRTree(data):
     return idx
 
 
-def query_for_nearest_terms(idx,keyMap,queryKey,numOfNearest = 5, notincludeQuery = True):
+def query_for_nearest_terms(idx,data,keyMap,queryKey,numOfNearest = 5, notincludeQuery = True):
     x = keyMap[queryKey]
-    print x
     Y = dataDict[queryKey]
-    print Y
-    histogram = {}
     for y in Y:
+        print queryKey
+        histogram = {}
         for i in idx.nearest((x,y,x,y),numOfNearest):
             try:
                 #print i,
@@ -44,7 +43,23 @@ def query_for_nearest_terms(idx,keyMap,queryKey,numOfNearest = 5, notincludeQuer
             except Exception as e:
                 print e
                 continue
-    return sorted(histogram.iteritems(), key=lambda x:x[::-1], reverse=True)
+        nearestTermsHistogram = sorted(histogram.iteritems(), key=lambda x:x[::-1], reverse=True)
+        X=[]
+        Y=[]
+        ann=[]
+        for x,y in nearestTermsHistogram:
+            X.append(x)
+            ann.append(keyMap.keys()[x-1])
+            Y.append(y)
+        fig, ax = plt.subplots()
+        ax.scatter(X, Y)
+        for i, txt in enumerate(ann):
+            ax.annotate(txt, (X[i],Y[i]))
+        #print data
+        plt.show()
+        #print "NH:",nearestTermsHistogram
+        print "="*27
+        break
 
 def __init__(self, name):
     self.name = []
@@ -53,26 +68,6 @@ def main():
     print "Entring main.."
     data,keyMap = indexWordOccurence()
     idx = createRTree(data)
+    print dataDict
     for keys in dataDict:
-        print keys
-        X=[]
-        Y=[]
-        ann=[]
-        nearestTermsHistogram = query_for_nearest_terms(idx,keyMap,keys,numOfNearest=10)
-        for x,y in nearestTermsHistogram:
-            X.append(x)
-            ann.append(keyMap.keys()[x-1])
-            Y.append(y)
-        print X
-        print Y
-        print ann
-        fig, ax = plt.subplots()
-        ax.scatter(X, Y)
-        for i, txt in enumerate(ann):
-            ax.annotate(txt, (X[i],Y[i]))
-        print keyMap
-        plt.show()
-        print "NH:",nearestTermsHistogram
-        print "="*27
-        break
-#print dataDict.keys()
+        nearestTermsHistogram = query_for_nearest_terms(idx,data,keyMap,keys,numOfNearest=5)

@@ -1,6 +1,6 @@
-#import matplotlib.pyplot as plt
-import matplotlib
-matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+#import matplotlib
+#matplotlib.use("Agg")
 import glob
 import re
 import rtree_imp as rt
@@ -100,7 +100,7 @@ def search(inverted, query):
 
 #######################################################
 
-user = "ubuntu"
+user = "windows"
 #user = "windows"
 if user is "windows":
     keys = glob.glob("keys\*")
@@ -172,7 +172,7 @@ for n in range(len(keys)):
         temp.append((x[i],y[i]))
 ##    print temp
     output = sorted(temp, key=lambda x: x[-1])
-    print key
+    #print key
     print " 2 - Grams"
     print "************************************************************************************************************"
     Two_gram_dict={}
@@ -204,7 +204,7 @@ for n in range(len(keys)):
     print "2G::::"
 ##    print New_IND2
     data.update(Two_gram_dict)
-    print Two_gram_dict
+    #print Two_gram_dict
     print "%%%"*29
     x2=[]
     y2=[]
@@ -247,7 +247,7 @@ for n in range(len(keys)):
             pass
     print "3G::"
     data.update(_3gdict)
-    print _3gdict
+    #print _3gdict
     print "##"*29
 
     ### NEW LIST OF IND FOR PLOTTING THE 3G WORDS ###
@@ -261,7 +261,7 @@ for n in range(len(keys)):
         for i in _3gdict[k]:
             New_IND3.append((L_temp,i))
         L_temp+=1
-    print New_IND3
+    #print New_IND3
 
 
     x3=[]
@@ -271,7 +271,7 @@ for n in range(len(keys)):
         g=str(i[0])+" "+str(i[1])+" "+str(i[2])
         s3.append(g)
         s.append(g)
-        print s3
+        #print s3
     for i in New_IND3:
         x3.append(i[0])
         x.append(i[0])
@@ -299,7 +299,7 @@ for n in range(len(keys)):
         else:
             pass
 
-    print _4gdict
+    #print _4gdict
     ### NEW LIST OF IND FOR PLOTTING THE 4G WORDS ###
     New_IND4 = []
     ### TWO GET THE PREVIOUSLY ACCESSED KEY WHILE PLOTTING ###
@@ -326,7 +326,7 @@ for n in range(len(keys)):
         g=str(i[0])+" "+str(i[1])+" "+str(i[2])+" "+str(i[3])
         s4.append(g)
         s.append(g)
-        print s
+        #print s
     for i in New_IND4:
         x4.append(i[0])
         x.append(i[0])
