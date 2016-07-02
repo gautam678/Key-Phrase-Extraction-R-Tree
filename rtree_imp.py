@@ -1,8 +1,8 @@
 from rtree import index
-#from Output import biochem2 as dataDict
 idx=index.Index()
 import numpy as np
 import matplotlib.pyplot as plt
+
 def indexWordOccurence():
     data=[]
     keyMap = {}
@@ -64,7 +64,7 @@ def __init__(self, name):
     self.name = []
 
 def main():
-    print "Entring main.."
+    print "Entering main.."
     data,keyMap = indexWordOccurence()
     idx = createRTree(data)
     print dataDict
