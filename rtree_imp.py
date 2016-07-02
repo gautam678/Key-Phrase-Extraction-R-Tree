@@ -24,9 +24,9 @@ def createRTree(data):
 def query_for_nearest_terms(idx,data,keyMap,queryKey,numOfNearest = 5, notincludeQuery = True):
     x = keyMap[queryKey]
     Y = dataDict[queryKey]
+    histogram={}
     for y in Y:
         print queryKey
-        histogram = {}
         for i in idx.nearest((x,y,x,y),numOfNearest):
             try:
                 #print i,
@@ -43,23 +43,22 @@ def query_for_nearest_terms(idx,data,keyMap,queryKey,numOfNearest = 5, notinclud
             except Exception as e:
                 print e
                 continue
-        nearestTermsHistogram = sorted(histogram.iteritems(), key=lambda x:x[::-1], reverse=True)
-        X=[]
-        Y=[]
-        ann=[]
-        for x,y in nearestTermsHistogram:
-            X.append(x)
-            ann.append(keyMap.keys()[x-1])
-            Y.append(y)
-        fig, ax = plt.subplots()
-        ax.scatter(X, Y)
-        for i, txt in enumerate(ann):
-            ax.annotate(txt, (X[i],Y[i]))
-        #print data
-        plt.show()
-        #print "NH:",nearestTermsHistogram
-        print "="*27
-        break
+    nearestTermsHistogram = sorted(histogram.iteritems(), key=lambda x:x[::-1], reverse=True)
+    X=[]
+    Y=[]
+    ann=[]
+    for x,y in nearestTermsHistogram:
+        X.append(x)
+        ann.append(keyMap.keys()[x-1])
+        Y.append(y)
+    fig, ax = plt.subplots()
+    ax.scatter(X, Y)
+    for i, txt in enumerate(ann):
+        ax.annotate(txt, (X[i],Y[i]))
+    #print data
+    plt.show()
+    #print "NH:",nearestTermsHistogram
+    print "="*27
 
 def __init__(self, name):
     self.name = []
