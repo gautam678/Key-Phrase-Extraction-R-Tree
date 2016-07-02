@@ -1,6 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-#import matplotlib
-#matplotlib.use("Agg")
 import glob
 import re
 import rtree_imp as rt
@@ -100,7 +100,10 @@ def search(inverted, query):
 
 #######################################################
 
-user = "windows"
+###Comment the next line if working on a windows machine
+user = "ubuntu"
+
+###Comment the next line if working on a linux server
 #user = "windows"
 if user is "windows":
     keys = glob.glob("keys\*")
@@ -126,7 +129,6 @@ for n in range(len(keys)):
     _STOP_WORDS = key
 
     doc = tran
-
 
     # Build Inverted-Index for documents
     inverted = {}
