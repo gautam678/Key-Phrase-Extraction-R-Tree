@@ -17,6 +17,10 @@ Key Phrase Extraction using R-Tree uses a number of packages to work properly:
 - numpy - for array and data manipulation
 
 ### Data
+
+If these folders don't exist, create them and do the following:
+
+
 ###### Transcript folder -
  This folder contains text files which are scraped from the internet. Usually these files talk about one single topic.
 ###### keys folder -
