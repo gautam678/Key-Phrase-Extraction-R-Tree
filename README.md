@@ -42,4 +42,4 @@ Here we can see that the Keyword 'Layer' is closely associated with Lipid becaus
 ###### Polar Molecules -
 ![alt text](https://github.com/gautam678/Key-Phrase-Extraction-R-Tree/blob/master/Images/ploar_molecuke.png)
 
- Here we can see that the Keyword Polar Molecules is closely associated with 'hexose molecule' because this has occured 4 times in the document wherver layer has occured
+ Here we can see that the Keyword Polar Molecules is closely associated with 'hexose molecule' because this has occured 2 times in the document wherver layer has occured
